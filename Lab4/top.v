@@ -40,7 +40,7 @@ module top(
 
     greater u6 (element_out, max_out, greater_out);
     equal16 u7 (i_out, equal16_out);
-    plus1 u8 (i_out, plus1_out);
+    plus13 u8 (i_out, plus1_out);
 
     ram u9 (bus, ~address_write, clock, bus, memory_write, memory_out);
 
