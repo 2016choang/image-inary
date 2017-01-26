@@ -38,8 +38,6 @@ module top(
     register u4 (clock, reset, max_write, bus, max_out);
     register u5 (clock, reset, i_write, bus, i_out);
 
-    greater u6 (element_out, max_out, greater_out);
-    equal16 u7 (i_out, equal16_out);
     plus13 u8 (i_out, plus1_out);
 
     ram u9 (bus, ~address_write, clock, bus, memory_write, memory_out);
