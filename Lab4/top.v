@@ -52,9 +52,6 @@ module top(
     hexdigit u14 (bus[3:0], HEX0);      // display bus on HEX0, HEX1 for debugging
     hexdigit u15 (bus[7:4], HEX1);
 
-    hexdigit u16 (max_out[3:0], HEX2);  // display max on HEX2, HEX3
-    hexdigit u17 (max_out[7:4], HEX3);
-
     control u18 (clock, reset, greater_out, equal16_out, element_write,
              element_drive, max_write, i_write, i_drive, plus1_drive,
              memory_write, memory_drive, address_write);
