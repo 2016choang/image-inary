@@ -4,8 +4,6 @@ module top(
                                         // ~KEY[1] is manual clock
     output wire [6:0] HEX0,             // HEX1-HEX0 shows bus value
     output wire [6:0] HEX1,
-    output wire [6:0] HEX2,             // HEX3-HEX2 shows current maximum
-    output wire [6:0] HEX3,
     output wire [8:0] LED_GREEN);       // LED_GREEN[8] shows reset
 
     wire reset;
