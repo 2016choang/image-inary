@@ -24,6 +24,8 @@ module top(
     wire memory_write;
     wire [7:0] memory_out;
     wire memory_drive;
+    
+    wire [7:0] encrypt_out;
 
     reset_toggle u1 (OSC_50, ~KEY[0], reset, LED_GREEN[8]); // maintains the reset signal
     clocks u2 (OSC_50, ~KEY[1], clock);
@@ -31,13 +33,13 @@ module top(
     register u3 (clock, reset, element_write, bus, element_out);
     register u4 (clock, reset, i_write, bus, i_out);
 
-    encrypt u6 (element_out, element_out);
+    encrypt u6 (element_out, encrypt_out);
     equal16or0 u7 (i_out, element_out, equal16or0_out);
     plus1 u8 (i_out, plus1_out);
 
     ram u9 (bus, ~address_write, clock, bus, memory_write, memory_out);
 
-    tristate u10 (element_out, bus, element_drive);
+    tristate u10 (encrypt_out, bus, element_drive);
     tristate u11 (plus1_out, bus, plus1_drive);
     tristate u12 (i_out, bus, i_drive);
     tristate u13 (memory_out, bus, memory_drive);
