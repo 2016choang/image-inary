@@ -14,9 +14,6 @@ module top(
     wire [7:0] element_out;
     wire element_write, element_drive;
 
-    wire [7:0] max_out;
-    wire max_write;
-
     wire [7:0] i_out;
     wire i_write, i_drive;
 
@@ -28,17 +25,15 @@ module top(
     wire [7:0] memory_out;
     wire memory_drive;
 
-    wire greater_out;
-    wire equal16_out;
-
     reset_toggle u1 (OSC_50, ~KEY[0], reset, LED_GREEN[8]); // maintains the reset signal
     clocks u2 (OSC_50, ~KEY[1], clock);
 
     register u3 (clock, reset, element_write, bus, element_out);
-    register u4 (clock, reset, max_write, bus, max_out);
     register u5 (clock, reset, i_write, bus, i_out);
 
-    plus13 u8 (i_out, plus1_out);
+    encrypt u6 (element_out, element_out);
+    equal16or0 u7 (i_out, element_out, equal16or0_out);
+    plus1 u8 (i_out, plus1_out);
 
     ram u9 (bus, ~address_write, clock, bus, memory_write, memory_out);
 
@@ -50,8 +45,8 @@ module top(
     hexdigit u14 (bus[3:0], HEX0);      // display bus on HEX0, HEX1 for debugging
     hexdigit u15 (bus[7:4], HEX1);
 
-    control u18 (clock, reset, greater_out, equal16_out, element_write,
-             element_drive, max_write, i_write, i_drive, plus1_drive,
+    control u18 (clock, reset, equal16or0_out, element_write,
+             element_drive, i_write, i_drive, plus1_drive,
              memory_write, memory_drive, address_write);
 
 endmodule
