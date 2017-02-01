@@ -57,11 +57,18 @@ module control(
 	    end
 
 	    state_read2: begin
-		// read and encrypt memory[i]
+		// read memory[i]
         memory_drive = 1'b1;
         element_write = 1'b1;
 		next_state = state_encrypt;
 	    end
+
+        state_encrypt: begin
+        // encrypt memory[i]
+        element_drive = 1'b1;
+        memory_write = 1'b1;
+        next_state = state_increment;
+        end
 
 	    state_increment: begin
 		// increment i

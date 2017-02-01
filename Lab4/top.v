@@ -29,7 +29,7 @@ module top(
     clocks u2 (OSC_50, ~KEY[1], clock);
 
     register u3 (clock, reset, element_write, bus, element_out);
-    register u5 (clock, reset, i_write, bus, i_out);
+    register u4 (clock, reset, i_write, bus, i_out);
 
     encrypt u6 (element_out, element_out);
     equal16or0 u7 (i_out, element_out, equal16or0_out);
