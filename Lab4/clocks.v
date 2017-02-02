@@ -30,8 +30,8 @@ module clocks(
          * Uncomment exactly one of these lines to choose a clock speed.
          */
 
-        // clock = clock_key_sync;               // manual clock
-        clock = clock_slow[24];                  // 1.5 Hz
+        clock = clock_key_sync;               // manual clock
+        // clock = clock_slow[24];                  // 1.5 Hz
         // clock = clock_slow[23];               // 3 Hz
         // clock = clock_slow[22];               // 6 Hz
         // clock = clock_slow[21];               // 12 Hz

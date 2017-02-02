@@ -4,7 +4,8 @@ module top(
                                         // ~KEY[1] is manual clock
     output wire [6:0] HEX0,             // HEX1-HEX0 shows bus value
     output wire [6:0] HEX1,
-    output wire [8:0] LED_GREEN);       // LED_GREEN[8] shows reset
+    output wire [8:0] LED_GREEN,       // LED_GREEN[8] shows reset
+	 output wire [7:0] LED_RED);
 
     wire reset;
     wire clock;                         // clock signal for circuit
@@ -33,8 +34,8 @@ module top(
     register u3 (clock, reset, element_write, bus, element_out);
     register u4 (clock, reset, i_write, bus, i_out);
 
+	 equal16or0 u7 (element_out, equal16or0_out);
     encrypt u6 (element_out, encrypt_out);
-    equal16or0 u7 (i_out, element_out, equal16or0_out);
     plus1 u8 (i_out, plus1_out);
 
     ram u9 (bus, ~address_write, clock, bus, memory_write, memory_out);
@@ -49,6 +50,6 @@ module top(
 
     control u18 (clock, reset, equal16or0_out, element_write,
              element_drive, i_write, i_drive, plus1_drive,
-             memory_write, memory_drive, address_write);
+             memory_write, memory_drive, address_write, LED_RED[7:0]);
 
 endmodule
