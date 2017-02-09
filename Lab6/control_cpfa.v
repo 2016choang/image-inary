@@ -133,8 +133,13 @@ module control(
     parameter state_blt4 =   8'h5f;
     parameter state_blt5 =   8'h60;
     parameter state_blt6 =   8'h61;
-    parameter state_ret1 =   8'h62;
-    parameter state_ret2 =   8'h63;
+    parameter state_cpfa1 =  8'h62;
+    parameter state_cpfa2 =  8'h63;
+    parameter state_cpfa3 =  8'h64;
+    parameter state_cpfa4 =  8'h65;
+    parameter state_cpfa5 =  8'h66;
+    parameter state_cpfa6 =  8'h67; 
+    parameter state_cpfa7 =  8'h68; 
 
     parameter E100_HALT =    32'h0000;
     parameter E100_ADD =     32'h0001;
@@ -295,11 +300,63 @@ module control(
                 //     next_state = state_cpta1;
                 // end else if (opcode_out == E100_CALL) begin
                 //     next_state = state_call1;
-                 end else if (opcode_out == E100_RET) begin
-                     next_state = state_ret1;
+                // end else if (opcode_out == E100_RET) begin
+                //     next_state = state_ret1;
                 
                 end
             end 
+
+            // execute cpfa instruction
+
+            state_cpfa1: begin 
+                // transfer arg2 to op1
+                arg2_drive = 1'b1;
+                op1_write = 1'b1;
+                next_state = state_cpfa2;
+            end 
+
+            state_cpfa2: begin
+                // transfer arg3 to address
+                arg3_drive = 1'b1;
+                address_write = 1'b1;
+                next_state = state_cpfa3;
+            end 
+
+            state_cpfa3: begin
+                // transfer mem[arg3] to op2
+                memory_drive = 1'b1;
+                op2_write = 1'b1;
+                next_state = state_cpfa4;
+            end
+
+            state_cpfa4: begin
+                // transfer op1 + op2 to address
+                add_drive = 1'b1;
+                address_write = 1'b1;
+                next_state = state_cpfa5;
+            end
+
+            state_cpfa5: begin
+                // transfer mem[op1 + op2] to arg3 (any spare register will do)
+                memory_drive = 1'b1;
+                arg3_write = 1'b1;
+                next_state = state_cpfa6;
+            end
+
+            state_cpfa6: begin
+                // transfer arg1 to address
+                arg1_drive = 1'b1;
+                address_write = 1'b1;
+                next_state = state_cpfa7;
+            end
+
+            state_cpfa7: begin
+                // write arg3 to mem[arg1]
+                arg3_drive = 1'b1;
+                memory_write = 1'b1;
+                next_state = state_fetch1;
+            end
+
 
             // execute halt instruction
 
@@ -912,20 +969,6 @@ module control(
                 iar_write = 1'b1;
                 next_state = state_fetch1;
             end 
-	    
-           state_ret1: begin
-		//transfer arg1 to address
-		arg1_drive = 1'b1;
-		address_write = 1'b1;
-		next_state = state_ret2;
-	   end
-	   
-	   state_ret2: begin
-		//transfer mem[arg1] to IAR
-		memory_drive = 1'b1;
-		iar_write = 1'b1;
-		next_state = state_fetch1;
-	   end
 
         endcase
     end
