@@ -912,20 +912,20 @@ module control(
                 iar_write = 1'b1;
                 next_state = state_fetch1;
             end 
-
-	    state_ret1: begin
+	    
+           state_ret1: begin
 		//transfer arg1 to address
 		arg1_drive = 1'b1;
 		address_write = 1'b1;
 		next_state = state_ret2;
-	    end
-	    
-	    state_ret2: begin
+	   end
+	   
+	   state_ret2: begin
 		//transfer mem[arg1] to IAR
 		memory_drive = 1'b1;
 		iar_write = 1'b1;
 		next_state = state_fetch1;
-	    end
+	   end
 
         endcase
     end
