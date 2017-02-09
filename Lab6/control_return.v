@@ -133,8 +133,6 @@ module control(
     parameter state_blt4 =   8'h5f;
     parameter state_blt5 =   8'h60;
     parameter state_blt6 =   8'h61;
-    parameter state_ret1 =   8'h62;
-    parameter state_ret2 =   8'h63;
 
     parameter E100_HALT =    32'h0000;
     parameter E100_ADD =     32'h0001;
@@ -295,8 +293,8 @@ module control(
                 //     next_state = state_cpta1;
                 // end else if (opcode_out == E100_CALL) begin
                 //     next_state = state_call1;
-                 end else if (opcode_out == E100_RET) begin
-                     next_state = state_ret1;
+                // end else if (opcode_out == E100_RET) begin
+                //     next_state = state_ret1;
                 
                 end
             end 
@@ -912,20 +910,6 @@ module control(
                 iar_write = 1'b1;
                 next_state = state_fetch1;
             end 
-
-	    state_ret1: begin
-		//transfer arg1 to address
-		arg1_drive = 1'b1;
-		address_write = 1'b1;
-		next_state = state_ret2;
-	    end
-	    
-	    state_ret2: begin
-		//transfer mem[arg1] to IAR
-		memory_drive = 1'b1;
-		iar_write = 1'b1;
-		next_state = state_fetch1;
-	    end
 
         endcase
     end
