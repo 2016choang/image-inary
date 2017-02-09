@@ -287,10 +287,14 @@ module control(
                 end else if (opcode_out == E100_BLT) begin
                     next_state = state_blt1;
 
-                *************************************************
-                * Replace these lines with decode logic for the *
-                * missing instructions.                         *
-                *************************************************
+                end else if (opcode_out == E100_CPFA) begin
+                    next_state = state_cpfa1;
+                // end else if (opcode_out == E100_CPTA) begin
+                //     next_state = state_cpta1;
+                // end else if (opcode_out == E100_CALL) begin
+                //     next_state = state_call1;
+                // end else if (opcode_out == E100_RET) begin
+                //     next_state = state_ret1;
                 
                 end
             end 
