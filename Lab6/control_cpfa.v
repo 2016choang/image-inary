@@ -354,7 +354,7 @@ module control(
                 // write arg3 to mem[arg1]
                 arg3_drive = 1'b1;
                 memory_write = 1'b1;
-                next_state = fetch1;
+                next_state = state_fetch1;
             end
 
 
