@@ -332,31 +332,31 @@ module control(
 			end
 	
 			state_cpta4: begin
-				//Adds mem[arg3] and arg2 and writes it to the memory address
-				add_drive = 1'b1;
+				//writes arg1 to memory address
+				arg1_drive = 1'b1;
 				address_write = 1'b1;
 				next_state = state_cpta5;
 			end
 	
 			state_cpta5: begin
-				//Reads mem[arg2+mem[arg3]] to arg2
+				//writes mem[arg1] to arg1
 				memory_drive = 1'b1;
-				arg2_drive = 1'b1;
+				arg1_drive = 1'b1;
 				next_state = state_cpta6;
 			end
 	
 			state_cpta6: begin
-				//writes arg1 to memory address
-				agr1_drive = 1'b1;
+				//writes arg2 + mem[arg3] to address
+				add_drive = 1'b1;
 				address_write = 1'b1;
 				next_state = state_cpta7;
 			end
 	
 			state_cpta7: begin
-				//Writes mem[arg2+mem[arg3]] to mem[arg1]
-				arg2_drive = 1'b1;
-				memory_drive = 1'b1;
-				next_state = state+fetch1;
+				//Writes mem[arg1] to mem[arg2+mem[arg3]]
+				arg1_drive = 1'b1;
+				memory_write = 1'b1;
+				next_state = state_fetch1;
 			end
 
               ///////////////////////////
