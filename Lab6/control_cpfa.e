@@ -1,5 +1,5 @@
 control_cpfa_start cpfa target array num2
-				   cpfa target array num3
+				   cpfa target2 array num3
 				   halt 
 target             0
 target2            0
