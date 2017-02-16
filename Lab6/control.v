@@ -324,33 +324,33 @@ module control(
 	//call 
     //execute call
             state_call1: begin
-		arg1_drive = 1'b1;
+		arg2_drive = 1'b1;
 		address_write = 1'b1;
-		next_state = state_call2;
+		next_state = state_call5;
 	    end
 
-	   state_call2: begin
+	   //state_call2: begin
 		//increment iar
-		plus1_drive = 1'b1;
-		iar_write = 1'b1;
-		next_state = state_call3;
-	  end
+		//plus1_drive = 1'b1;
+		//iar_write = 1'b1;
+		//next_state = state_call3;
+	  //end
 
-	  state_call3: begin
+	  //state_call3: begin
 		//increment iar
-		plus1_drive = 1'b1;
-		iar_write = 1'b1;
-		next_state = state_call4;
-	  end
-	state_call4: begin
+		//plus1_drive = 1'b1;
+		//iar_write = 1'b1;
+		//next_state = state_call4;
+	  //end
+	//state_call4: begin
 		//increment iar
-		plus1_drive = 1'b1;
-		iar_write = 1'b1;
-		next_state = state_call5;
-	  end
+		//plus1_drive = 1'b1;
+		//iar_write = 1'b1;
+		//next_state = state_call5;
+	  //end
 	state_call5: begin
 		//write IAR+4 to memory
-		plus1_drive = 1'b1;
+		iar_drive = 1'b1;
 		memory_write = 1'b1;
 		next_state = state_call6;
 	  end
@@ -446,7 +446,7 @@ module control(
 			state_cpta5: begin
 				//writes mem[arg1] to arg1
 				memory_drive = 1'b1;
-				arg1_drive = 1'b1;
+				arg1_write = 1'b1;
 				next_state = state_cpta6;
 			end
 	

@@ -1,4 +1,4 @@
 start        call x y 
-             halt
-x            16
+             add x x x 
+x            0
 y            11

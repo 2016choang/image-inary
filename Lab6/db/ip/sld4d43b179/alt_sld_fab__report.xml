@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2017.02.16.15:05:06"
+ date="2017.02.16.15:48:43"
  outputDirectory="/home/jacobraz/engr100/code_busters/code_busters/Lab6/db/ip/sld4d43b179/">
  <perimeter>
   <parameter
@@ -38,13 +38,13 @@
  </perimeter>
  <entity
    path=""
-   parameterizationKey="alt_sld_fab:1.0:AUTO_DEVICE=,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=(alt_sld_fab:15.0:AGENTS=,AUTO_DEVICE=Unknown,AUTO_DEVICE_SPEEDGRADE=Unknown,CLOCKS={id {} } ,DESIGN_HASH=b890315a29e585df4a9d,DEVICE_FAMILY=Cyclone V,EP_INFOS={hpath {ram:u22|altsyncram:altsyncram_component|altsyncram_9an1:auto_generated|sld_mod_ram_rom:mgl_prim2} } ,MAX_WIDTH=28,MIRROR=0,NODE_COUNT=1,SETTINGS={fabric sld dir agent mfr_code 110 type_code 3 version 1 instance 0 ir_width 5 psig f63706bb} ,TOP_HUB=1(altera_super_splitter:15.0:MAX_WIDTH=28,RECEIVE_WIDTHS=28,SEND_WIDTHS=7)(altera_sld_splitter:15.0:ADD_INTERFACE_ASGN=0,EXAMPLE=,FRAGMENTS={{name clock type clock dir end ports { {tck clk in 1 0} } } {name node type conduit dir end ports { {tms tms in 1 1} {tdi tdi in 1 2} {tdo tdo out 1 0} {ena ena in 1 3} {usr1 usr1 in 1 4} {clr clr in 1 5} {clrn clrn in 1 6} {jtag_state_tlr jtag_state_tlr in 1 7} {jtag_state_rti jtag_state_rti in 1 8} {jtag_state_sdrs jtag_state_sdrs in 1 9} {jtag_state_cdr jtag_state_cdr in 1 10} {jtag_state_sdr jtag_state_sdr in 1 11} {jtag_state_e1dr jtag_state_e1dr in 1 12} {jtag_state_pdr jtag_state_pdr in 1 13} {jtag_state_e2dr jtag_state_e2dr in 1 14} {jtag_state_udr jtag_state_udr in 1 15} {jtag_state_sirs jtag_state_sirs in 1 16} {jtag_state_cir jtag_state_cir in 1 17} {jtag_state_sir jtag_state_sir in 1 18} {jtag_state_e1ir jtag_state_e1ir in 1 19} {jtag_state_pir jtag_state_pir in 1 20} {jtag_state_e2ir jtag_state_e2ir in 1 21} {jtag_state_uir jtag_state_uir in 1 22} {ir_in ir_in in 5 23} {irq irq out 1 1} {ir_out ir_out out 5 2} } clock clock assign {debug.controlledBy {link_0} } moduleassign {debug.virtualInterface.link_0 {debug.endpointLink {fabric sld index 1} } } } } )(altera_jtag_pins_bridge:15.0:)(altera_sld_jtag_hub:15.0:BROADCAST_FEATURE=0,COMPILATION_MODE=0,CONN_INDEX=0,COUNT=1,DEVICE_FAMILY=Cyclone V,ENABLE_SOFT_CORE_CONTROLLER=0,FORCE_IR_CAPTURE_FEATURE=1,FORCE_PRE_1_4_FEATURE=0,NODE_INFO=00001000000110000110111000000000,N_NODE_IR_BITS=5,N_SEL_BITS=1,SETTINGS={mfr_code 110 type_code 3 version 1 instance 0 ir_width 5 prefer_host {} } )(altera_connection_identification_hub:15.0:COUNT=1,DESIGN_HASH=b890315a29e585df4a9d,SETTINGS={width 4 latency 0} )(conduit:15.0:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(clock:15.0:)(conduit:15.0:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(clock:15.0:)(conduit:15.0:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(conduit:15.0:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0))"
+   parameterizationKey="alt_sld_fab:1.0:AUTO_DEVICE=,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=(alt_sld_fab:15.0:AGENTS=,AUTO_DEVICE=Unknown,AUTO_DEVICE_SPEEDGRADE=Unknown,CLOCKS={id {} } ,DESIGN_HASH=baacb4d7d4c0fad0996d,DEVICE_FAMILY=Cyclone IV E,EP_INFOS={hpath {ram:u22|altsyncram:altsyncram_component|altsyncram_p3h1:auto_generated|sld_mod_ram_rom:mgl_prim2} } ,MAX_WIDTH=28,MIRROR=0,NODE_COUNT=1,SETTINGS={fabric sld dir agent mfr_code 110 type_code 3 version 1 instance 0 ir_width 5 psig f63706bb} ,TOP_HUB=1(altera_super_splitter:15.0:MAX_WIDTH=28,RECEIVE_WIDTHS=28,SEND_WIDTHS=7)(altera_sld_splitter:15.0:ADD_INTERFACE_ASGN=0,EXAMPLE=,FRAGMENTS={{name clock type clock dir end ports { {tck clk in 1 0} } } {name node type conduit dir end ports { {tms tms in 1 1} {tdi tdi in 1 2} {tdo tdo out 1 0} {ena ena in 1 3} {usr1 usr1 in 1 4} {clr clr in 1 5} {clrn clrn in 1 6} {jtag_state_tlr jtag_state_tlr in 1 7} {jtag_state_rti jtag_state_rti in 1 8} {jtag_state_sdrs jtag_state_sdrs in 1 9} {jtag_state_cdr jtag_state_cdr in 1 10} {jtag_state_sdr jtag_state_sdr in 1 11} {jtag_state_e1dr jtag_state_e1dr in 1 12} {jtag_state_pdr jtag_state_pdr in 1 13} {jtag_state_e2dr jtag_state_e2dr in 1 14} {jtag_state_udr jtag_state_udr in 1 15} {jtag_state_sirs jtag_state_sirs in 1 16} {jtag_state_cir jtag_state_cir in 1 17} {jtag_state_sir jtag_state_sir in 1 18} {jtag_state_e1ir jtag_state_e1ir in 1 19} {jtag_state_pir jtag_state_pir in 1 20} {jtag_state_e2ir jtag_state_e2ir in 1 21} {jtag_state_uir jtag_state_uir in 1 22} {ir_in ir_in in 5 23} {irq irq out 1 1} {ir_out ir_out out 5 2} } clock clock assign {debug.controlledBy {link_0} } moduleassign {debug.virtualInterface.link_0 {debug.endpointLink {fabric sld index 1} } } } } )(altera_jtag_pins_bridge:15.0:)(altera_sld_jtag_hub:15.0:BROADCAST_FEATURE=0,COMPILATION_MODE=0,CONN_INDEX=0,COUNT=1,DEVICE_FAMILY=Cyclone IV E,ENABLE_SOFT_CORE_CONTROLLER=0,FORCE_IR_CAPTURE_FEATURE=1,FORCE_PRE_1_4_FEATURE=0,NODE_INFO=00001000000110000110111000000000,N_NODE_IR_BITS=5,N_SEL_BITS=1,SETTINGS={mfr_code 110 type_code 3 version 1 instance 0 ir_width 5 prefer_host {} } )(altera_connection_identification_hub:15.0:COUNT=1,DESIGN_HASH=baacb4d7d4c0fad0996d,SETTINGS={width 4 latency 0} )(conduit:15.0:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(clock:15.0:)(conduit:15.0:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(clock:15.0:)(conduit:15.0:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(conduit:15.0:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0))"
    instancePathKey="alt_sld_fab"
    kind="alt_sld_fab"
    version="1.0"
    name="alt_sld_fab">
   <parameter name="AUTO_DEVICE" value="" />
-  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="" />
   <generatedFiles>
    <file
@@ -143,7 +143,7 @@
  </entity>
  <entity
    path="submodules/"
-   parameterizationKey="alt_sld_fab:15.0:AGENTS=,AUTO_DEVICE=Unknown,AUTO_DEVICE_SPEEDGRADE=Unknown,CLOCKS={id {} } ,DESIGN_HASH=b890315a29e585df4a9d,DEVICE_FAMILY=Cyclone V,EP_INFOS={hpath {ram:u22|altsyncram:altsyncram_component|altsyncram_9an1:auto_generated|sld_mod_ram_rom:mgl_prim2} } ,MAX_WIDTH=28,MIRROR=0,NODE_COUNT=1,SETTINGS={fabric sld dir agent mfr_code 110 type_code 3 version 1 instance 0 ir_width 5 psig f63706bb} ,TOP_HUB=1(altera_super_splitter:15.0:MAX_WIDTH=28,RECEIVE_WIDTHS=28,SEND_WIDTHS=7)(altera_sld_splitter:15.0:ADD_INTERFACE_ASGN=0,EXAMPLE=,FRAGMENTS={{name clock type clock dir end ports { {tck clk in 1 0} } } {name node type conduit dir end ports { {tms tms in 1 1} {tdi tdi in 1 2} {tdo tdo out 1 0} {ena ena in 1 3} {usr1 usr1 in 1 4} {clr clr in 1 5} {clrn clrn in 1 6} {jtag_state_tlr jtag_state_tlr in 1 7} {jtag_state_rti jtag_state_rti in 1 8} {jtag_state_sdrs jtag_state_sdrs in 1 9} {jtag_state_cdr jtag_state_cdr in 1 10} {jtag_state_sdr jtag_state_sdr in 1 11} {jtag_state_e1dr jtag_state_e1dr in 1 12} {jtag_state_pdr jtag_state_pdr in 1 13} {jtag_state_e2dr jtag_state_e2dr in 1 14} {jtag_state_udr jtag_state_udr in 1 15} {jtag_state_sirs jtag_state_sirs in 1 16} {jtag_state_cir jtag_state_cir in 1 17} {jtag_state_sir jtag_state_sir in 1 18} {jtag_state_e1ir jtag_state_e1ir in 1 19} {jtag_state_pir jtag_state_pir in 1 20} {jtag_state_e2ir jtag_state_e2ir in 1 21} {jtag_state_uir jtag_state_uir in 1 22} {ir_in ir_in in 5 23} {irq irq out 1 1} {ir_out ir_out out 5 2} } clock clock assign {debug.controlledBy {link_0} } moduleassign {debug.virtualInterface.link_0 {debug.endpointLink {fabric sld index 1} } } } } )(altera_jtag_pins_bridge:15.0:)(altera_sld_jtag_hub:15.0:BROADCAST_FEATURE=0,COMPILATION_MODE=0,CONN_INDEX=0,COUNT=1,DEVICE_FAMILY=Cyclone V,ENABLE_SOFT_CORE_CONTROLLER=0,FORCE_IR_CAPTURE_FEATURE=1,FORCE_PRE_1_4_FEATURE=0,NODE_INFO=00001000000110000110111000000000,N_NODE_IR_BITS=5,N_SEL_BITS=1,SETTINGS={mfr_code 110 type_code 3 version 1 instance 0 ir_width 5 prefer_host {} } )(altera_connection_identification_hub:15.0:COUNT=1,DESIGN_HASH=b890315a29e585df4a9d,SETTINGS={width 4 latency 0} )(conduit:15.0:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(clock:15.0:)(conduit:15.0:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(clock:15.0:)(conduit:15.0:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(conduit:15.0:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)"
+   parameterizationKey="alt_sld_fab:15.0:AGENTS=,AUTO_DEVICE=Unknown,AUTO_DEVICE_SPEEDGRADE=Unknown,CLOCKS={id {} } ,DESIGN_HASH=baacb4d7d4c0fad0996d,DEVICE_FAMILY=Cyclone IV E,EP_INFOS={hpath {ram:u22|altsyncram:altsyncram_component|altsyncram_p3h1:auto_generated|sld_mod_ram_rom:mgl_prim2} } ,MAX_WIDTH=28,MIRROR=0,NODE_COUNT=1,SETTINGS={fabric sld dir agent mfr_code 110 type_code 3 version 1 instance 0 ir_width 5 psig f63706bb} ,TOP_HUB=1(altera_super_splitter:15.0:MAX_WIDTH=28,RECEIVE_WIDTHS=28,SEND_WIDTHS=7)(altera_sld_splitter:15.0:ADD_INTERFACE_ASGN=0,EXAMPLE=,FRAGMENTS={{name clock type clock dir end ports { {tck clk in 1 0} } } {name node type conduit dir end ports { {tms tms in 1 1} {tdi tdi in 1 2} {tdo tdo out 1 0} {ena ena in 1 3} {usr1 usr1 in 1 4} {clr clr in 1 5} {clrn clrn in 1 6} {jtag_state_tlr jtag_state_tlr in 1 7} {jtag_state_rti jtag_state_rti in 1 8} {jtag_state_sdrs jtag_state_sdrs in 1 9} {jtag_state_cdr jtag_state_cdr in 1 10} {jtag_state_sdr jtag_state_sdr in 1 11} {jtag_state_e1dr jtag_state_e1dr in 1 12} {jtag_state_pdr jtag_state_pdr in 1 13} {jtag_state_e2dr jtag_state_e2dr in 1 14} {jtag_state_udr jtag_state_udr in 1 15} {jtag_state_sirs jtag_state_sirs in 1 16} {jtag_state_cir jtag_state_cir in 1 17} {jtag_state_sir jtag_state_sir in 1 18} {jtag_state_e1ir jtag_state_e1ir in 1 19} {jtag_state_pir jtag_state_pir in 1 20} {jtag_state_e2ir jtag_state_e2ir in 1 21} {jtag_state_uir jtag_state_uir in 1 22} {ir_in ir_in in 5 23} {irq irq out 1 1} {ir_out ir_out out 5 2} } clock clock assign {debug.controlledBy {link_0} } moduleassign {debug.virtualInterface.link_0 {debug.endpointLink {fabric sld index 1} } } } } )(altera_jtag_pins_bridge:15.0:)(altera_sld_jtag_hub:15.0:BROADCAST_FEATURE=0,COMPILATION_MODE=0,CONN_INDEX=0,COUNT=1,DEVICE_FAMILY=Cyclone IV E,ENABLE_SOFT_CORE_CONTROLLER=0,FORCE_IR_CAPTURE_FEATURE=1,FORCE_PRE_1_4_FEATURE=0,NODE_INFO=00001000000110000110111000000000,N_NODE_IR_BITS=5,N_SEL_BITS=1,SETTINGS={mfr_code 110 type_code 3 version 1 instance 0 ir_width 5 prefer_host {} } )(altera_connection_identification_hub:15.0:COUNT=1,DESIGN_HASH=baacb4d7d4c0fad0996d,SETTINGS={width 4 latency 0} )(conduit:15.0:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(clock:15.0:)(conduit:15.0:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(clock:15.0:)(conduit:15.0:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(conduit:15.0:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)"
    instancePathKey="alt_sld_fab:.:alt_sld_fab"
    kind="alt_sld_fab"
    version="15.0"
@@ -151,17 +151,17 @@
   <parameter name="MAX_WIDTH" value="28" />
   <parameter name="AUTO_DEVICE" value="Unknown" />
   <parameter name="TOP_HUB" value="1" />
-  <parameter name="DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="DEVICE_FAMILY" value="Cyclone IV E" />
   <parameter
      name="EP_INFOS"
-     value="{hpath {ram:u22|altsyncram:altsyncram_component|altsyncram_9an1:auto_generated|sld_mod_ram_rom:mgl_prim2} } " />
+     value="{hpath {ram:u22|altsyncram:altsyncram_component|altsyncram_p3h1:auto_generated|sld_mod_ram_rom:mgl_prim2} } " />
   <parameter name="AGENTS" value="" />
   <parameter
      name="SETTINGS"
      value="{fabric sld dir agent mfr_code 110 type_code 3 version 1 instance 0 ir_width 5 psig f63706bb} " />
   <parameter name="NODE_COUNT" value="1" />
   <parameter name="CLOCKS" value="{id {} } " />
-  <parameter name="DESIGN_HASH" value="b890315a29e585df4a9d" />
+  <parameter name="DESIGN_HASH" value="baacb4d7d4c0fad0996d" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="Unknown" />
   <parameter name="MIRROR" value="0" />
   <generatedFiles>
@@ -301,7 +301,7 @@
  </entity>
  <entity
    path="submodules/"
-   parameterizationKey="altera_sld_jtag_hub:15.0:BROADCAST_FEATURE=0,COMPILATION_MODE=0,CONN_INDEX=0,COUNT=1,DEVICE_FAMILY=Cyclone V,ENABLE_SOFT_CORE_CONTROLLER=0,FORCE_IR_CAPTURE_FEATURE=1,FORCE_PRE_1_4_FEATURE=0,NODE_INFO=00001000000110000110111000000000,N_NODE_IR_BITS=5,N_SEL_BITS=1,SETTINGS={mfr_code 110 type_code 3 version 1 instance 0 ir_width 5 prefer_host {} } "
+   parameterizationKey="altera_sld_jtag_hub:15.0:BROADCAST_FEATURE=0,COMPILATION_MODE=0,CONN_INDEX=0,COUNT=1,DEVICE_FAMILY=Cyclone IV E,ENABLE_SOFT_CORE_CONTROLLER=0,FORCE_IR_CAPTURE_FEATURE=1,FORCE_PRE_1_4_FEATURE=0,NODE_INFO=00001000000110000110111000000000,N_NODE_IR_BITS=5,N_SEL_BITS=1,SETTINGS={mfr_code 110 type_code 3 version 1 instance 0 ir_width 5 prefer_host {} } "
    instancePathKey="alt_sld_fab:.:alt_sld_fab:.:sldfabric"
    kind="altera_sld_jtag_hub"
    version="15.0"
@@ -312,7 +312,7 @@
   <parameter name="N_SEL_BITS" value="1" />
   <parameter name="COMPILATION_MODE" value="0" />
   <parameter name="ENABLE_SOFT_CORE_CONTROLLER" value="0" />
-  <parameter name="DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="DEVICE_FAMILY" value="Cyclone IV E" />
   <parameter name="N_NODE_IR_BITS" value="5" />
   <parameter name="FORCE_PRE_1_4_FEATURE" value="0" />
   <parameter name="COUNT" value="1" />
@@ -340,14 +340,14 @@
  </entity>
  <entity
    path="submodules/"
-   parameterizationKey="altera_connection_identification_hub:15.0:COUNT=1,DESIGN_HASH=b890315a29e585df4a9d,SETTINGS={width 4 latency 0} "
+   parameterizationKey="altera_connection_identification_hub:15.0:COUNT=1,DESIGN_HASH=baacb4d7d4c0fad0996d,SETTINGS={width 4 latency 0} "
    instancePathKey="alt_sld_fab:.:alt_sld_fab:.:ident"
    kind="altera_connection_identification_hub"
    version="15.0"
    name="alt_sld_fab_alt_sld_fab_ident">
   <parameter name="COUNT" value="1" />
   <parameter name="SETTINGS" value="{width 4 latency 0} " />
-  <parameter name="DESIGN_HASH" value="b890315a29e585df4a9d" />
+  <parameter name="DESIGN_HASH" value="baacb4d7d4c0fad0996d" />
   <generatedFiles>
    <file
        path="/home/jacobraz/engr100/code_busters/code_busters/Lab6/db/ip/sld4d43b179/submodules/alt_sld_fab_alt_sld_fab_ident.sv"
