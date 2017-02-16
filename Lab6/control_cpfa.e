@@ -4,7 +4,7 @@ control_cpfa_start cpfa target array num2
 target             0
 target2            0
 num2               2
-num3	           3
+num3               3
 array              0
 				   1
 				   2
