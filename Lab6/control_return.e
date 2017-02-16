@@ -1,9 +1,11 @@
-control_return_start		add z x y
+control_return_start		ret x
+				//should return IAR = 12
+				add x x x
+				add x x x
+				halt				
 
-z				0
-x				4
-y				4
 
-				add z x y
-				
-				ret z
+x 				12
+
+
+			
