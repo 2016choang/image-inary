@@ -912,8 +912,38 @@ module control(
             end 
 
             //execute call
-            st
+            state_call1: begin
+		arg1_drive = 1'b1;
+		address_write = 1'b1;
+		next_state = state_call2;
+	    end
 
+	   state_call2: begin
+		//increment iar
+		plus1_drive = 1'b1;
+		iar_write = 1'b1;
+	  end
+
+	  state_call3: begin
+		//increment iar
+		plus1_drive = 1'b1;
+		iar_write = 1'b1;
+	  end
+	state_call4: begin
+		//increment iar
+		plus1_drive = 1'b1;
+		iar_write = 1'b1;
+	  end
+	state_call5: begin
+		//write IAR+4 to memory
+		plus1_drive = 1'b1;
+		memory_write = 1'b1;
+	  end
+	state_call6: begin
+		//write arg1 to IAR
+		arg1_drive = 1'b1;
+		iar_write = 1'b1;
+	  end
         endcase
     end
 
