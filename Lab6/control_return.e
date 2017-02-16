@@ -1,11 +1,11 @@
 control_return_start		ret x
 				//should return IAR = 16
 				add x x x
-				add x x x
-				halt				
-
+				add x x x				
 
 x 				12
+				
+				halt
 
 
 			
