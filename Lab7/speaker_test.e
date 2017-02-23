@@ -8,10 +8,10 @@
 start	call speaker return 
 looper	cpfa sample array i
 	add i i one
-	bne looper i count
+	bne start i count
 		
 reset	cp i zero
-	be looper zero zero1
+	be start zero zero
 
 
 
