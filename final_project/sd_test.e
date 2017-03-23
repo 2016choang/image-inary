@@ -3,8 +3,8 @@ start	call sd return
 	cp address i	
 	add i i one 
 	cp led_red data
-	bne start address zero
-	
+	bne start address 0x1000
+	halt 
 
 
 return 	0
