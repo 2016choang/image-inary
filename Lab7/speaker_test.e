@@ -6,7 +6,7 @@
 //
 //
 start	call speaker return 
-looper	cpfa sample array i
+	cpfa sample array i
 	add i i one
 	bne start i count
 		
