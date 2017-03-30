@@ -1,25 +1,29 @@
 //Takes input from camera and puts on VGA touchscreen
 //Allows you to write on the touchscreen
+//Plays a sound if (the first time) you touch a specific area
 
 start		cp cameraScale numThree			//Sets image size to 640x480
 color		cp colorWrite maize				//Sets the color to draw with
 Image		call copyX return				//Calls camera driver to get image to VGA memory
 touch		call touchscreen touchscreen_ra	//Calls touchscreen driver to get touch coordinates
-box			sub vgaXOne touch_x numTwo
-			add vgaXTwo touch_x numTwo
-			sub vgaYOne touch_y numTwo
-			add vgaYTwo touch_y numTwo
-			blt draw num330test touch_x
-			blt draw touch_x num310test
-			blt draw num250test touch_y
-			blt draw touch_y num230test
-speaker2	call speaker return
-			cpfa sample array i
-			add i i numOne
-			bne speaker2 i num19
-			cp i numZero
-			//add j j numOne
-			//be speaker2 j numOne
+box			sub vgaXOne touch_x numTwo		//Sets the edges of the box to draw
+			add vgaXTwo touch_x numTwo		//Sets the edges of the box to draw
+			sub vgaYOne touch_y numTwo		//Sets the edges of the box to draw
+			add vgaYTwo touch_y numTwo		//Sets the edges of the box to draw
+			blt draw num330test touch_x		//Tests if the touched coordinate is in the target area
+			blt draw touch_x num310test		//Tests if the touched coordinate is in the target area
+			blt draw num250test touch_y		//Tests if the touched coordinate is in the target area
+			blt draw touch_y num230test		//Tests if the touched coordinate is in the target area
+			//be draw touched numOne		would only allow us to hit it once
+			//cp touched numOne				would basically set a bool to true
+speaker2	call speaker return				//calls the speaker
+			cpfa sample array i				//copies each part of the sound array to speaker
+			add i i numOne					//adds 1 to the j counter
+			bne speaker2 i num19			//loops until sound is done
+			cp i numZero					//resets the i counter
+			add j j numOne					//adds 1 to the i counter
+			bne speaker2 j num100			//tests if it has run the sound a few times
+			cp j numZero					//Resets the j counter for next loop
 draw		cp vgaXwrite vgaXOne			//copies touchscreen X touched coordinate to left X VGA coordinate
 			cp vgaXtwoWrite vgaXTwo			//copies touchscreen X touched coordinate to right X VGA coordinate
 			cp vgaYwrite vgaYOne			//copies touchscreen Y touched coordinate to top Y VGA coordinate
@@ -33,6 +37,7 @@ return 		0
 maize		16776960
 numTwo		2
 num19		19
+num100		100
 i			0
 j			0
 vgaXOne		0
