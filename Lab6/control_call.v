@@ -911,8 +911,48 @@ module control(
                 next_state = state_fetch1;
             end 
 
-            //execute call
-            st
+            //execute call 
+            state_call1: begin
+                //drives arg2 into the address for mem
+                agr2_drive = 1'b1;
+                address_write = 1'b1;
+                next_state = state_call2;
+            end
+
+            state_call2: begin
+                //increments iar
+                plus1_drive = 1'b1;
+                iar_write = 1'b1;
+                next_state = state_call3;
+            end
+
+            state_call3: begin
+                //increments iar
+                plus1_drive = 1'b1;
+                iar_write = 1'b1;
+                next_state = state_call4;
+            end
+
+            state_call4: begin 
+                //increments iar
+                plus1_drive = 1'b1;
+                iar_write = 1'b1;
+                next_state = state_call5;
+            end
+
+            state_call5: begin 
+                //drives the value of (original IAR) + 4 into memory 
+                plus1_drive = 1'b1;
+                memory_write = 1'b1;
+                next_state = state_call6;
+            end
+
+            state_call6: begin
+                //drives arg1 into iars
+                arg1_drive = 1'b1;
+                iar_write = 1'b1;
+                next_state = state_fetch1;
+            end
 
         endcase
     end
