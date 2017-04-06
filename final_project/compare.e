@@ -16,7 +16,12 @@ compare			call write return   //call vga_read
 				sub green_diff green_temp comp_green
 				sub blue_diff blue_temp comp_blue
 
-				add tot_diff tot_diff red_diff
+				//check if any differences are less than 0
+				blt abs_red red_diff zero
+				blt abs_green green_diff zero
+				blt abs_blue blue_diff zero
+
+start_add			add tot_diff tot_diff red_diff
 				add tot_diff tot_diff green_diff
 				add tot_diff tot_diff blue_diff
 
@@ -25,6 +30,14 @@ compare			call write return   //call vga_read
 				cp min_diff tot_diff
 				cp min_x vgaXread
 				cp min_y vgaYread
+
+				//multiplying negative values by -1
+abs_red				red_diff red_diff neg_one
+				be start_add zero zero
+abs_green			green_diff green_diff neg_one
+				be start_add zero zero
+abs_blue			blue_diff blue_diff neg_one
+				be start_add zero zero
 
 //prepare for next iteration
 end_loop		
@@ -55,8 +68,9 @@ min_diff		0
 min_x			0
 min_y			0
 
-one				1
+one			1
 zero			0
 return 			0
+neg_one			-1
 
 #include VGAread.e
