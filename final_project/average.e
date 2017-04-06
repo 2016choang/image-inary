@@ -25,16 +25,16 @@ loop		call sdram return
 		bne loop current_address end_address 
 		
 //totals are now the averages
-		div red_tot red_tot count
-		div green_tot green_tot count
-		div blue_tot blue_tot count
+		div red_ave red_tot count
+		div green_ave green_tot count
+		div blue_ave blue_tot count
 //shifts bits back to original positions
-		sl red_tot red_tot sixteen
-		sl green_tot green_tot eight
+		sl red_ave red_ave sixteen
+		sl green_ave green_ave eight
 
-		add ave_pixel ave_pixel red_tot
-		add ave_pixel ave_pixel green_tot
-		add ave_pixel ave_pixel blue_tot
+		add ave_pixel ave_pixel red_ave
+		add ave_pixel ave_pixel green_ave
+		add ave_pixel ave_pixel blue_ave
 
 red_and 	16711680 //0b111111110000000000000000 
 green_and	65820 //0b000000001111111100000000
@@ -53,4 +53,7 @@ start_address	0
 end_address	0
 current_address 0
 ave_pixel	0
+red_ave		0
+blue_ave	0
+green_ave	0
 #include sdram_driver.e
