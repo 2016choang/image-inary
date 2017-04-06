@@ -1,6 +1,0 @@
-control_cpfa_start	0	(0x0)
-target	12	(0xc)
-target2	13	(0xd)
-num2	14	(0xe)
-num3	15	(0xf)
-array	16	(0x10)
