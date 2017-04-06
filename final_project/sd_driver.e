@@ -5,24 +5,24 @@
 //0x80000084	write 	bits 31-0: sd_data_write
 //0x80000085	read 	bits 31-0: sd_data_read
 
-sd		cp 0x80000083 address // address
+sd		cp 0x80000083 addressSD // address
 		cp 0x80000082 zero    // write
 		cp 0x80000080 one // command
 
-wait_one	cp sd_response 0x80000081
-		bne wait_one sd_response one
+wait_oneSD	cp sd_response 0x80000081
+		bne wait_oneSD sd_response one
 	
-read		cp data 0x80000085
+readSD		cp dataSD 0x80000085
 		
 		cp 0x80000080 zero
 
-wait_two	cp sd_response 0x80000081
-		bne wait_two sd_response zero
+wait_twoSD	cp sd_response 0x80000081
+		bne wait_twoSD sd_response zero
 					
 		ret return
 
-one		1
-zero		0
-sd_response	0
-data		0
-address		0
+//one			1
+//zero			0
+sd_response		0
+dataSD			0
+addressSD		0

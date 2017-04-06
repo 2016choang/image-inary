@@ -5,25 +5,25 @@
 //0x80000034	write 	bits 31-0: sdram_data_write
 //0x80000035	read 	bits 31-0: sdram_data_read 
 
-sdram		cp 0x80000033 address // address
-		cp 0x80000032 write    // write
-		cp 0x80000034 data
+sdram		cp 0x80000033 addressRAM // address
+		cp 0x80000032 writeRAM    // write
+		cp 0x80000034 dataRAM
 		cp 0x80000030 one	//command
-wait_one	cp sdram_response 0x80000081
-		bne wait_one sdram_response one
+wait_oneRAM	cp sdram_response 0x80000031
+		bne wait_oneRAM sdram_response one
 
-read		cp data 0x80000035
+readRAM		cp dataRAM 0x80000035
 		
 		cp 0x80000030 zero // command
 
-wait_two 	cp sdram_response 0x80000081	//waits for response
-		bne wait_two sdram_response zero
+wait_twoRAM 	cp sdram_response 0x80000031	//waits for response
+		bne wait_twoRAM sdram_response zero
 
 		ret return
 
-one		1
-zero		0
+//one			1
+//zero			0
 sdram_response	0
-data		0
-address		0
-write 		1
+dataRAM			0
+addressRAM		0
+writeRAM 		1
