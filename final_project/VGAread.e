@@ -1,4 +1,4 @@
-write				cp 0x80000062 numZeroRead
+VGAread			cp 0x80000062 numZeroRead
 				cp 0x80000063 vgaXread
 				cp 0x80000064 vgaYread
 
@@ -11,11 +11,11 @@ respondRead			cp responseRead 0x80000061
 				cp 0x80000060 numZeroRead
 respond2			cp responseRead 0x80000061
 				bne respond2 responseRead numZeroRead
-				ret return
+				ret returnVGA
 
 numOneRead		1
 numZeroRead		0
-responseRead		0
+responseRead	0
 vgaXread		0
 vgaYread		0
 vgaXtworead		0
