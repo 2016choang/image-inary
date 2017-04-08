@@ -19,7 +19,7 @@ readRAM		cp dataRAM 0x80000035
 wait_twoRAM 	cp sdram_response 0x80000031	//waits for response
 		bne wait_twoRAM sdram_response zero
 
-		ret return2
+		ret returnram
 
 //one			1
 //zero			0

@@ -47,7 +47,7 @@ end_loop			cp red_diff zero
 				cp tot_diff zero
 				blt incrementX vgaXread width
 				blt incrementY vgaYread height
-				ret return2 //Might have to change the return value to something else
+				ret returncomp //Might have to change the return value to something else
 
 incrementX 			add vgaXread vgaXread one
 				be compare zero zero
@@ -78,13 +78,13 @@ blue_diff		0
 tot_diff		0
 
 //data about the minimum difference
-min_diff		1000
+min_diff		0xffffff
 min_x			0
 min_y			0
 
 //VGA dimensions
-width			639
-height			479
+width			489
+height			346
 
 one				1
 zero			0

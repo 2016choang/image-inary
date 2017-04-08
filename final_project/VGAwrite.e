@@ -9,7 +9,7 @@ vgaWrite		cp 0x80000062 numOneWrite
 respondWrite	cp responseWrite 0x80000061
 				bne respondWrite responseWrite numOneWrite
 				cp 0x80000060 numZeroWrite
-				ret return
+				ret returnVGAwrite
 
 numOneWrite		1
 numZeroWrite	0
