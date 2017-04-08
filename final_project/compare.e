@@ -1,7 +1,7 @@
 //update comp_red, green and blue before calling
 //returns location of min difference in min_x and min_y
 
-compare			call write return   //call vga_read
+compare				call write return   //call vga_read
 				//colorRead now contains the color from the VGA
 				and red_temp red_and colorRead
 				and green_temp green_and colorRead
@@ -26,10 +26,11 @@ start_add			add tot_diff tot_diff red_diff
 				add tot_diff tot_diff blue_diff
 
 				//
-				blt min_diff tot_diff end_loop
+				blt end_loop min_diff tot_diff
 				cp min_diff tot_diff
 				cp min_x vgaXread
 				cp min_y vgaYread
+				be end_loop zero zero
 
 				//multiplying negative values by -1
 abs_red				red_diff red_diff neg_one
@@ -40,8 +41,21 @@ abs_blue			blue_diff blue_diff neg_one
 				be start_add zero zero
 
 //prepare for next iteration
-end_loop		
+end_loop			cp red_diff zero
+				cp green_diff zero
+				cp blue_diff zero
+				cp tot_diff zero
+				blt incrementX vgaXread width
+				blt incrementY vgaYread height
+				ret return //Might have to change the return value to something else
 
+incrementX 			add vgaXread vgaXread one
+				be compare zero zero
+
+incrementY			cp vgaXread zero
+				add vgaYread vgaYread one
+				be compare zero zero
+ 			
 //used for bitshifting 
 red_and 	16711680 //0b111111110000000000000000 
 green_and	65820 //0b000000001111111100000000
@@ -67,6 +81,10 @@ tot_diff		0
 min_diff		0
 min_x			0
 min_y			0
+
+//VGA dimensions
+width			639
+height			479
 
 one			1
 zero			0

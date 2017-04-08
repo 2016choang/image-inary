@@ -28,7 +28,7 @@
 //Should make separate files for each function to make it more organized
 	//Camera driver call is easy
 	//One to get image from SD card to SD Ram 	 		SDCardToRAM.e
-	//One to get average color and find closest pixel	compare.e, average.e
+	//One to get average color and find closest pixel	average.e, compare.e
 	//One that uses this info to add the picture		SDRAMToScreen.e
 	//One to get the touched location					
 	//One to test the touched location					
