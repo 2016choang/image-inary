@@ -10,14 +10,17 @@ average 	cp writeRAM zero
 			cp addressRAM start_address
 			cp current_address start_address
 			cp 0x80000001 one
+
+//____________________________
+
 looper		call sdram returnram
 			
-			//logical and to get rgb values
+			//Logical and to get rgb values
 			and red_temp red_and dataRAM
 			and green_temp green_and dataRAM
 			and blue_temp blue_and dataRAM
 			
-			//bitshift red and green so there are no trailing 0s
+			//Bitshift red and green so there are no trailing 0s
 			sr red_temp red_temp sixteen
 			sr green_temp green_temp eight
 			//blt break red_temp upper
@@ -27,21 +30,26 @@ looper		call sdram returnram
 			//blt break lower green_temp
 			//blt break lower blue_temp
 			//be inc one one		
-		
-			//update totals
+
+//____________________________
+
+			//Update totals of color values
 break		add red_tot red_tot red_temp
 			add green_tot green_tot green_temp
 			add blue_tot blue_tot blue_temp
 			add count count one
+
+//____________________________
+
 inc			add current_address current_address one
 			cp addressRAM current_address 
 			
-			//loops back to beginning while not equal to size
+			//Loops back to beginning while not equal to size
 			blt looper current_address end_address 
 		
 			cp 0x80000001 four
 			
-			//totals are now the averages
+			//Calculate the averages by dividing totals by count of pixels
 			cp 0x80000001 count
 			cp 0x80000003 count
 			div red_ave red_tot count
@@ -52,7 +60,7 @@ inc			add current_address current_address one
 			div blue_ave blue_tot count
 			cp 0x80000001 blue_temp
 			
-			//shifts bits back to original positions
+			//Shifts bits back to original positions
 			sl red_ave red_ave sixteen
 			sl green_ave green_ave eight
 

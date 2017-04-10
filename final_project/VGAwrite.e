@@ -9,6 +9,8 @@ vgaWrite		cp 0x80000062 numOneWrite
 				cp 0x80000066 vgaYtwoWrite
 				cp 0x80000067 colorWrite
 
+//____________________________
+
 				cp 0x80000060 numOneWrite
 respondWrite	cp responseWrite 0x80000061
 				bne respondWrite responseWrite numOneWrite
