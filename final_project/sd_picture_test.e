@@ -5,7 +5,7 @@ loop1	cp addressSD i
 		cp addressRAM i
 		call sd return
 		cp dataRAM dataSD
-		call sdram return
+		call sdram return2
 		add i i one
 		bne loop1 i end
 //_____________________________
@@ -15,13 +15,13 @@ loop1	cp addressSD i
 //_____________________________
 
 loop2	cp addressRAM i
-		call sdram return
+		call sdram return2
 		cp colorWrite dataRAM
 		cp vgaXwrite X
 		cp vgaYwrite Y
 		cp vgaXtwoWrite X
 		cp vgaYtwoWrite Y
-		call vgaWrite return
+		call vgaWrite returnVGAwrite
 		add i i one
 		be stop i end
 		add X X one
@@ -45,11 +45,13 @@ zero	0
 
 i		0
 return	0
+return2	0
+returnVGAwrite	0
 
-end		6100
+end		16950
 X		100
 Y		100
-col		200
+col		250
 start	100
 
 //______________________________

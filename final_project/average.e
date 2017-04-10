@@ -5,7 +5,7 @@ average 	cp writeRAM zero
 		cp addressRAM start_address
 		cp current_address start_address
 		cp 0x80000001 one
-looper		call sdram return2
+looper		call sdram returnram
 		//logical and to get rgb values
 		and red_temp red_and dataRAM
 		and green_temp green_and dataRAM
@@ -51,29 +51,28 @@ inc		add current_address current_address one
 		
 		cp count zero
 		cp current_address zero
-		ret return
+		ret returnavg
 
-red_and 	16711680 //0b111111110000000000000000 
-green_and	65280 //0b000000001111111100000000
-blue_and	255 //000000000000000011111111b 
-return2	0
-blue_temp	0
-green_temp	0
-red_temp	0
+//red_and 	16711680 //0b111111110000000000000000 
+//green_and	65280 //0b000000001111111100000000
+//blue_and	255 //000000000000000011111111b 
+//blue_temp	0
+//green_temp	0
+//red_temp	0
 blue_tot	0
 green_tot	0
 red_tot		0
 count		0
-sixteen 	16
-eight 		8
+//sixteen 	16
+//eight 		8
 start_address	0
-end_address 6100
+end_address 16950
 current_address 0
 ave_pixel	0
 red_ave		0
 blue_ave	0
 green_ave	0
-zero		0
+//zero		0
 two			2
 three		3
 four 		4

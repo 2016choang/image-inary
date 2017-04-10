@@ -1,47 +1,103 @@
 //Master file for the whole project
 
-//___________________________________
-
+master	cp writeRAM one
 		cp cameraScale numThree			//Sets image size to 640x480
-		call copyX return				//Calls camera driver to get image to VGA memory
+		call copyX returnCAM			//Calls camera driver to get image to VGA memory
+//____________________________
+		cp 0x80000004 one
 
-//Finds location of closest color
-//Sets the start X and Y pos based on this and size
-		cp X [[XPOS]]
-		cp Y [[YPOS]]
-//Sets end of column based on this and size
-		add col [[XPOS]] X
-//Sets location to touch based on this
-		sub [[XTOUCHL]] [[XPOS]] X/2
-		add [[XTOUCHR]] [[XPOS]] X/2
-//Hides picture in appropriate spot
-		cp [[XTOUCHL]] [[XPOS]]
-		cp [[YTOUCHT]] [[YPOS]]
-		call SDRAMToScreen
-//Reads touched coords
-//Tests touched coords
+loop1	cp addressSD i
+		cp addressRAM i
+		call sd returnSD
+		cp dataRAM dataSD
+		call sdram returnram
+		add i i one
+		cp 0x80000004 two
+		cp 0x80000003 i
+		blt loop1 i end
+//_____________________________
 
-//___________________________________ Suggestions
+		cp time1 0x80000005
+wait	sub diff 0x80000005 time1
+		blt wait diff thresh
+		
+		call average returnavg
+		cp comp_red red_ave
+		cp comp_green green_ave
+		cp comp_blue blue_ave
+		call compare returncomp
+		cp X min_x
+		cp Y min_y
+		cp start min_x
+		add col X num150
+		cp 0x80000004 min_x
+		cp 0x80000003 min_y
+		
+//_____________________________
 
-//Should probably make a reset button in the bottom right or something to start over whenever we want
+		cp i zero
+		cp writeRAM zero
+//_____________________________
+		//cp 0x80000004 numThree
 
-//Should make separate files for each function to make it more organized
-	//Camera driver call is easy
-	//One to get image from SD card to SD Ram 	 		SDCardToRAM.e
-	//One to get average color and find closest pixel	average.e, compare.e
-	//One that uses this info to add the picture		SDRAMToScreen.e
-	//One to get the touched location					
-	//One to test the touched location					
+loop2	cp addressRAM i
+		call sdram returnram
+		cp colorWrite dataRAM
+		cp vgaXwrite X
+		cp vgaYwrite Y
+		cp vgaXtwoWrite X
+		cp vgaYtwoWrite Y
+		//cp 0x80000004 numFour
+		call vgaWrite returnVGAwrite
+		add i i one
+		be stop i end
+		add X X one
+		bne loop2 X col
+		cp X start
+		add Y Y one
+		be loop2 zero zero
+//_____________________________
+
+stop	halt
+
+//_____________________________
 	
-//___________________________________
-	
-
 	  ///////////////
 	 ///Variables///
 	///////////////
-	
-one			1
-zero		0
-return		0
+//_____________________________
 
+//one		1
+//zero	0
+num150	150
+numThree	3
+numFour		4
+thresh 		56000
+diff		0
+time1		0
 
+i				0
+return			0
+return2			0
+returnVGAwrite	0
+returnavg		0
+returncomp		0
+returnram		0
+returnSD 		0
+testCount		0
+returnCAM		0
+
+end		16950
+X		0
+Y		0
+col		0
+start	0
+
+//______________________________
+
+#include sd_driver.e
+#include sdram_driver.e
+#include VGAwrite.e
+#include compare.e
+#include average.e
+#include cameradriver.e

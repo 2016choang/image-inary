@@ -19,7 +19,7 @@ readSD		cp dataSD 0x80000085
 wait_twoSD	cp sd_response 0x80000081
 		bne wait_twoSD sd_response zero
 					
-		ret return
+		ret returnSD
 
 //one			1
 //zero			0

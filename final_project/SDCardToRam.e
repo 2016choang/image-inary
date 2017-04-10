@@ -7,14 +7,8 @@ loop1		cp addressSD i
 			cp dataRAM dataSD
 			call sdram return
 			add i i one
-			bne loop1 i end
+			blt loop1 i end
 			cp i zero
-			ret return
-i		0
-end		6100
-//X		100
-//Y		100
-//col		200
-//start	100
-
-#include sd_driver.e
+			ret returnSDCardToRam
+//i		0
+end		16950

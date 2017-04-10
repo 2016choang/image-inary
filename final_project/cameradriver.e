@@ -6,7 +6,7 @@ ready		cp 0x800000b0 numOne
 respond		cp response 0x800000b1
 			bne respond response numOne
 reset		cp 0x800000b0 numZero
-back		ret return
+back		ret returnCAM
 
 numOne			1
 numZero			0
