@@ -12,6 +12,8 @@
 
 touchscreen cp 0x800000e0 touch_command_on //Sets touch_command to 1 (touch_command_on)
 
+//_____________________________
+
 wait1		cp touch_response 0x800000e1 //Reads response to touch_response 
       		bne wait1 touch_response touch_response_on //Waits until tech_response equals 1
       			 
@@ -21,6 +23,7 @@ wait1		cp touch_response 0x800000e1 //Reads response to touch_response
       		cp touch_pressed 0x800000e4 //Copies 1-bit "pressed" state to touch_pressed
       		cp 0x80000001 touch_pressed 
 
+//_____________________________
 
       		cp 0x800000e0 touch_command_off //Sets touch_command back to 0 (touch_command_off)
 wait2 		cp touch_response 0x800000e1 //Reads response to touch_response 
