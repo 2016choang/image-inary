@@ -1,4 +1,6 @@
-//SD card to SDRAM
+//Team: Code Busters
+//Group Members: Chris Hoang, Jacob Rasmussen, Sach Vaidya, Nicholas Young
+//Transfer picture in SD card to SDRAM
 
 SDCardToRAM	cp writeRAM one
 loop1		cp addressSD i

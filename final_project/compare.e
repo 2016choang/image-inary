@@ -1,7 +1,11 @@
-//update comp_red, green and blue before calling
-//returns location of min difference in min_x and min_y
+//Team: Code Busters
+//Group Members: Chris Hoang, Jacob Rasmussen, Sach Vaidya, Nicholas Young
+//Find location of pixel that is closest in color to the average pixel color
+//Update comp_red, comp_green and comp_blue before calling
+//Returns location of pixel with min difference in min_x and min_y
 
-compare				call VGAread returnVGA   //call vga_read
+compare			call VGAread returnVGA   //call vga_read
+
 				//colorRead now contains the color from the VGA
 				and red_temp red_and colorRead
 				and green_temp green_and colorRead
@@ -21,7 +25,7 @@ checkRed		blt abs_red red_diff zero
 checkGreen		blt abs_green green_diff zero
 checkBlue		blt abs_blue blue_diff zero
 
-start_add			add tot_diff tot_diff red_diff
+start_add		add tot_diff tot_diff red_diff
 				add tot_diff tot_diff green_diff
 				add tot_diff tot_diff blue_diff
 
@@ -40,26 +44,33 @@ abs_green		mult green_diff green_diff neg_one
 abs_blue		mult blue_diff blue_diff neg_one
 				be start_add zero zero
 
-//prepare for next iteration
-end_loop			cp red_diff zero
+				//prepare for next iteration
+end_loop		cp red_diff zero
 				cp green_diff zero
 				cp blue_diff zero
 				cp tot_diff zero
 				blt incrementX vgaXread width
 				blt incrementY vgaYread height
-				ret returncomp //Might have to change the return value to something else
+				ret returncomp
 
-incrementX 			add vgaXread vgaXread one
+incrementX 		add vgaXread vgaXread one
 				be compare zero zero
 
-incrementY			cp vgaXread zero
+incrementY		cp vgaXread zero
 				add vgaYread vgaYread one
 				be compare zero zero
  			
+ //_____________________________
+	
+	  ///////////////
+	 ///Variables///
+	///////////////
+//_____________________________
+
 //used for bitshifting 
-red_and 	16711680 //0b111111110000000000000000 
-green_and	65820 //0b000000001111111100000000
-blue_and	255 //000000000000000011111111b 
+red_and 		16711680 //0b111111110000000000000000 
+green_and		65820 //0b000000001111111100000000
+blue_and		255 //000000000000000011111111b 
 
 //average pixel of other image
 comp_red		0
