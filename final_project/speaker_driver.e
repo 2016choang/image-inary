@@ -21,11 +21,11 @@ wait_one		cp speaker_response 0x80000041
 wait_two		cp speaker_response 0x80000041 //Reads response to speaker_response
 blah      		bne wait_two speaker_response zero 
 		
-				ret return 
+				ret returnSpeaker 
 
 speaker_command_on	1
 speaker_command_off	0
 speaker_response	0
 sample	 		0
-one			1
-zero			0
+//one			1
+//zero			0

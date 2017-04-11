@@ -10,6 +10,15 @@ average 	cp writeRAM zero
 			cp addressRAM start_address
 			cp current_address start_address
 			cp 0x80000001 one
+			cp red_ave zero
+			cp blue_ave zero
+			cp green_ave zero
+			cp red_tot zero
+			cp blue_tot zero
+			cp green_tot zero
+			cp red_temp zero
+			cp blue_temp zero
+			cp green_temp zero
 
 //____________________________
 

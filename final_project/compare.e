@@ -5,13 +5,24 @@
 //Returns location of pixel with min difference in min_x and min_y
 
 				//Call VGAread driver
-compare			call VGAread returnVGA
+compare			cp startX chunkX
+				cp startY chunkY
+							
+				call average_chunk returnavg_chunk
 
-				//ColorRead now contains the color of the current pixel
-				and red_temp red_and colorRead
-				and green_temp green_and colorRead
-				and blue_temp blue_and colorRead
-
+				//ave_pixel_chunk now contains the color of the current pixel
+				and red_temp red_and ave_pixel_chunk
+				and green_temp green_and ave_pixel_chunk
+				and blue_temp blue_and ave_pixel_chunk
+				
+				cp vgaXwrite chunkX
+				cp vgaYwrite chunkY
+				add vgaXtwoWrite chunkX num10
+				add vgaYtwoWrite chunkY num10
+				cp colorWrite ave_pixel_chunk
+				call vgaWrite returnVGAwrite			
+			
+				
 				//Bitshift red and green so there are no trailing 0s
 				sr red_temp red_temp sixteen
 				sr green_temp green_temp eight
@@ -29,12 +40,13 @@ checkBlue		blt abs_blue blue_diff zero
 start_add		add tot_diff tot_diff red_diff
 				add tot_diff tot_diff green_diff
 				add tot_diff tot_diff blue_diff
+				
 
 				//Update min_diff accordingly
 				blt end_loop min_diff tot_diff
 				cp min_diff tot_diff
-				cp min_x vgaXread
-				cp min_y vgaYread
+				cp min_x chunkX
+				cp min_y chunkY
 				be end_loop zero zero
 
 				//Calculate absolute value of differences
@@ -50,18 +62,17 @@ end_loop		cp red_diff zero
 				cp green_diff zero
 				cp blue_diff zero
 				cp tot_diff zero
-				blt incrementX vgaXread width
-				blt incrementY vgaYread height
+				blt incrementX chunkX width
+				blt incrementY chunkY height
 				ret returncomp
 
-				//Move to next x-coordinate of VGA display
-incrementX 		add vgaXread vgaXread one
+
+incrementX 		add chunkX chunkX num160
 				be compare zero zero
 
-				//Move to next y-coordinate of VGA display
-				//Reset x-coordinate back to 0
-incrementY		cp vgaXread zero
-				add vgaYread vgaYread one
+				
+incrementY		cp chunkX zero
+				add chunkY chunkY num120
 				be compare zero zero
  			
  //_____________________________
@@ -75,13 +86,15 @@ incrementY		cp vgaXread zero
 red_and 		16711680 //0b111111110000000000000000 
 green_and		65820 //0b000000001111111100000000
 blue_and		255 //000000000000000011111111b 
+num160			160
+num120			120
 
 //average pixel of other image
 comp_red		0
 comp_green		0
 comp_blue		0
 
-//values from vga
+//values from averag_chunk
 red_temp		0
 green_temp		0
 blue_temp		0
@@ -93,19 +106,19 @@ blue_diff		0
 tot_diff		0
 
 //data about the minimum difference
-min_diff		0xffffff
+min_diff		9999999
 min_x			0
 min_y			0
 
-//VGA dimensions
-width			489
-height			346
+chunkX			0
+chunkY			0
+width			480
+height			360
 
+countone		1
 one				1
 zero			0
-returnVGA		0
 neg_one			-1
 sixteen			16
 eight			8
 
-#include VGAread.e
