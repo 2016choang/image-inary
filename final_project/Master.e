@@ -68,8 +68,8 @@ stop	halt
 //_____________________________
 
 //one		1
-//zero	0
-num150	150
+//zero		0
+num150		150
 numThree	3
 numFour		4
 thresh 		56000
