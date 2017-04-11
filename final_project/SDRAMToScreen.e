@@ -1,4 +1,6 @@
-//SDRAM to VGA screen
+//Team: Code Busters
+//Group Members: Chris Hoang, Jacob Rasmussen, Sach Vaidya, Nicholas Young
+//Displays picture in SDRAM on VGA screen
 
 RAMtoScreen	cp writeRAM zero
 loop2		cp addressRAM i
@@ -18,10 +20,17 @@ loop2		cp addressRAM i
 			be loop2 zero zero
 stop		cp i zero
 			ret returnRAMtoScreen
-			
-i		0
+
+//_____________________________
+	
+	  ///////////////
+	 ///Variables///
+	///////////////
+//_____________________________
+
+i			0
 //end		6100
-X		100
-Y		100
-col		250
-start	100
+X			100
+Y			100
+col			250
+start		100

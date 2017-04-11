@@ -1,9 +1,12 @@
-//Master file for the whole project
+//Team: Code Busters
+//Group Members: Chris Hoang, Jacob Rasmussen, Sach Vaidya, Nicholas Young
+//Master file for Image-inary prototype
 
 master	cp writeRAM one
 		cp cameraScale numThree			//Sets image size to 640x480
 		call copyX returnCAM			//Calls camera driver to get image to VGA memory
 //____________________________
+
 		cp 0x80000004 one
 
 loop1	cp addressSD i
@@ -38,6 +41,7 @@ wait	sub diff 0x80000005 time1
 		cp i zero
 		cp writeRAM zero
 //_____________________________
+
 		//cp 0x80000004 numThree
 
 loop2	cp addressRAM i
@@ -47,6 +51,7 @@ loop2	cp addressRAM i
 		cp vgaYwrite Y
 		cp vgaXtwoWrite X
 		cp vgaYtwoWrite Y
+
 		//cp 0x80000004 numFour
 		call vgaWrite returnVGAwrite
 		add i i one

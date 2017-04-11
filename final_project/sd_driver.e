@@ -1,3 +1,7 @@
+//Team: Code Busters
+//Group Members: Chris Hoang, Jacob Rasmussen, Sach Vaidya, Nicholas Young
+//Driver for SD card
+
 //0x80000080	write 	bit 0: sd_command 	
 //0x80000081	read 	bit 0: sd_response
 //0x80000082	write 	bits 0: sd_write
