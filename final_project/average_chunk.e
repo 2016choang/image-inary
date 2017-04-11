@@ -11,10 +11,10 @@ average_chunk 	cp currentX startX
 			add endY startY num120
 			cp vgaXread currentX
 			cp vgaYread currentY
-			cp ave_pixel zero
-			cp red_ave zero
-			cp blue_ave zero
-			cp green_ave zero
+			cp ave_pixel_chunk zero
+			cp red_ave_chunk zero
+			cp blue_ave_chunk zero
+			cp green_ave_chunk zero
 			cp red_tot zero
 			cp blue_tot zero
 			cp green_tot zero
@@ -47,7 +47,6 @@ break_chunk		add red_tot red_tot red_temp
 inc_chunk	blt incX currentX endX
 			blt incY currentY endY
 			
-			cp 0x80000001 four
 			
 			//Calculate the averages by dividing totals by count of pixels
 

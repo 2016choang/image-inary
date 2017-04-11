@@ -62,6 +62,9 @@ end_loop		cp red_diff zero
 				cp green_diff zero
 				cp blue_diff zero
 				cp tot_diff zero
+				cp red_temp zero
+				cp green_temp zero
+				cp blue_temp zero
 				blt incrementX chunkX width
 				blt incrementY chunkY height
 				ret returncomp
@@ -121,4 +124,5 @@ zero			0
 neg_one			-1
 sixteen			16
 eight			8
+num10			10
 

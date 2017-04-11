@@ -24,6 +24,12 @@ wait	sub diff 0x80000005 time1
 		cp comp_red red_ave
 		cp comp_green green_ave
 		cp comp_blue blue_ave
+		cp colorWrite ave_pixel
+		cp vgaXwrite num100
+		cp vgaYwrite num100
+		add vgaYtwoWrite num100 num10
+		add vgaXtwoWrite num100 num10
+		call vgaWrite returnVGAwrite 
 		call compare returncomp
 		cp X min_x
 		cp Y min_y
