@@ -1,6 +1,6 @@
 //Team: Code Busters
-//Group Members: Chris Hoang, Jacob Rasmussen, Sach Vaidya, Nicholas Young
-//Driver to read pixels from VGA display
+//Authors: Chris Hoang, Nicholas Young
+//Purpose: Driver to read pixels from VGA display
 
 VGAread			cp 0x80000062 numZeroRead
 				cp 0x80000063 vgaXread

@@ -1,10 +1,9 @@
 //Team: Code Busters
-//Group Members: Chris Hoang, Jacob Rasmussen, Sach Vaidya, Nicholas Young
-//Find average pixel color of smaller image to be hidden 
+//Authors: Chris Hoang, Jacob Rasmussen, Sach Vaidya, Nicholas Young
+//Purpose: Find average pixel color of smaller image to be hidden 
+
 //Update start and end address before calling 
 //ave_pixel updated to the average pixel value at the end 
-
-
 average 	cp writeRAM zero
 			cp ave_pixel zero
 			cp addressRAM start_address

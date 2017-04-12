@@ -1,6 +1,6 @@
 //Team: Code Busters
-//Group Members: Chris Hoang, Jacob Rasmussen, Sach Vaidya, Nicholas Young
-//Driver to write pixels to VGA display
+//Authors: Chris Hoang, Nicholas Young
+//Purpose: Driver to write pixels to VGA display
 
 vgaWrite		cp 0x80000062 numOneWrite
 				cp 0x80000063 vgaXwrite

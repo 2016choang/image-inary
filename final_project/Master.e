@@ -1,6 +1,6 @@
 //Team: Code Busters
-//Group Members: Chris Hoang, Jacob Rasmussen, Sach Vaidya, Nicholas Young
-//Master file for Image-inary prototype
+//Authors: Chris Hoang, Jacob Rasmussen, Sach Vaidya, Nicholas Young
+//Purpose: Master file for Image-inary prototype
 
 master	cp writeRAM one
 		cp cameraScale numThree			//Sets image size to 640x480

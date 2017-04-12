@@ -1,6 +1,6 @@
 //Team: Code Busters
-//Group Members: Chris Hoang, Jacob Rasmussen, Sach Vaidya, Nicholas Young
-//Transfer picture in SD card to SDRAM
+//Authors: Chris Hoang, Jacob Rasmussen, Sach Vaidya, Nicholas Young
+//Purpose: Transfer picture in SD card to SDRAM
 
 SDCardToRAM	cp writeRAM one
 loop1		cp addressSD i
@@ -12,5 +12,13 @@ loop1		cp addressSD i
 			blt loop1 i end
 			cp i zero
 			ret returnSDCardToRam
+
+ //_____________________________
+	
+	  ///////////////
+	 ///Variables///
+	///////////////
+//_____________________________
+			
 //i		0
 end		16950

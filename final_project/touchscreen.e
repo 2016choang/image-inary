@@ -1,6 +1,6 @@
 //Team: Code Busters
-//Group Members: Chris Hoang, Jacob Rasmussen, Sach Vaidya, Nicholas Young
-//Driver for the touchscreen
+//Author: Chris Hoang
+//Purpose: Driver for the touchscreen
 
 //0x800000e0	write	bit 0: touch_command
 //0x800000e1	read	bit 0: touch_response
