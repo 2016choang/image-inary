@@ -56,7 +56,7 @@ loop2	cp addressRAM i
 		cp vgaYtwoWrite Y
 
 		//cp 0x80000004 numFour
-		call vgaWrite returnVGAwrite
+		//call vgaWrite returnVGAwrite
 		add i i one
 		be loop3 i end
 		add X X one

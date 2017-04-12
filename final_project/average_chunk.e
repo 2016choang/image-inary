@@ -9,8 +9,6 @@ average_chunk 	cp currentX startX
 			cp currentY startY
 			add endX startX num160
 			add endY startY num120
-			cp vgaXread currentX
-			cp vgaYread currentY
 			cp ave_pixel_chunk zero
 			cp red_ave_chunk zero
 			cp blue_ave_chunk zero
@@ -21,9 +19,13 @@ average_chunk 	cp currentX startX
 			cp red_temp zero
 			cp blue_temp zero
 			cp green_temp zero
+			cp count zero
 //____________________________
 
-looper_chunk		call VGAread returnVGA
+looper_chunk	cp vgaXread currentX
+				cp vgaYread currentY
+
+			call VGAread returnVGA
 			
 			//Logical and to get rgb values
 			and red_temp red_and colorRead
@@ -65,13 +67,13 @@ inc_chunk	blt incX currentX endX
 			add ave_pixel_chunk ave_pixel_chunk green_ave_chunk 
 			add ave_pixel_chunk ave_pixel_chunk blue_ave_chunk 
 		
-			cp count zero
 			ret returnavg_chunk
 
 incX		add currentX currentX one
 			be looper_chunk one one
 			
 incY		add currentY currentY one
+			cp currentX startX
 			be looper_chunk one one
 
 //_____________________________
