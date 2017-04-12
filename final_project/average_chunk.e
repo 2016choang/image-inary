@@ -6,6 +6,7 @@
 
 
 average_chunk 	cp currentX startX
+<<<<<<< HEAD
 			cp currentY startY
 			add endX startX num160
 			add endY startY num120
@@ -26,23 +27,43 @@ looper_chunk	cp vgaXread currentX
 				cp vgaYread currentY
 
 			call VGAread returnVGA
+=======
+				cp currentY startY
+				add endX startX num160
+				add endY startY num120
+				cp vgaXread currentX
+				cp vgaYread currentY
+				cp ave_pixel_chunk zero
+				cp red_ave_chunk zero
+				cp blue_ave_chunk zero
+				cp green_ave_chunk zero
+				cp red_tot zero
+				cp blue_tot zero
+				cp green_tot zero
+				cp red_temp zero
+				cp blue_temp zero
+				cp green_temp zero
+//____________________________
+
+looper_chunk	call VGAread returnVGA
+>>>>>>> 656187a94f925cca6726e43dd287a00ca161d7d8
 			
-			//Logical and to get rgb values
-			and red_temp red_and colorRead
-			and green_temp green_and colorRead
-			and blue_temp blue_and colorRead
+				//Logical and to get rgb values
+				and red_temp red_and colorRead
+				and green_temp green_and colorRead
+				and blue_temp blue_and colorRead
 			
-			//Bitshift red and green so there are no trailing 0s
-			sr red_temp red_temp sixteen
-			sr green_temp green_temp eight
+				//Bitshift red and green so there are no trailing 0s
+				sr red_temp red_temp sixteen
+				sr green_temp green_temp eight
 
 //____________________________
 
-			//Update totals of color values
+				//Update totals of color values
 break_chunk		add red_tot red_tot red_temp
-			add green_tot green_tot green_temp
-			add blue_tot blue_tot blue_temp
-			add count count one
+				add green_tot green_tot green_temp
+				add blue_tot blue_tot blue_temp
+				add count count one
 
 //____________________________
 
@@ -83,33 +104,33 @@ incY		add currentY currentY one
 	///////////////
 //_____________________________
 
-//red_and 	16711680 //0b111111110000000000000000 
-//green_and	65280 //0b000000001111111100000000
-//blue_and	255 //000000000000000011111111b 
-//blue_temp	0
+//red_and 		16711680 //0b111111110000000000000000 
+//green_and		65280 //0b000000001111111100000000
+//blue_and		255 //000000000000000011111111b 
+//blue_temp		0
 //green_temp	0
-//red_temp	0
+//red_temp		0
 
-//blue_tot	0
-//green_tot	0
+//blue_tot		0
+//green_tot		0
 //red_tot		0
-//count		0
-startX		0
-startY		0
-endX		0
-endY		0
-currentX	0
-currentY	0
-//sixteen 	16
+//count			0
+startX			0
+startY			0
+endX			0
+endY			0
+currentX		0
+currentY		0
+//sixteen 		16
 //eight 		8
 ave_pixel_chunk	0
-red_ave_chunk		0
+red_ave_chunk	0
 blue_ave_chunk	0
 green_ave_chunk	0
 
-//zero		0
+//zero			0
 //two			2
-//three		3
-//four 		4
-//upper		225
-//lower		30
+//three			3
+//four 			4
+//upper			225
+//lower			30

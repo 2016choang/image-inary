@@ -1,6 +1,6 @@
 //Team: Code Busters
-//Group Members: Chris Hoang, Jacob Rasmussen, Sach Vaidya, Nicholas Young
-//Driver for camera
+//Authors: Nicholas Young
+//Purpose: Driver for camera
 
 copyX		cp 0x800000b2 cameraX
 copyY		cp 0x800000b3 cameraY

@@ -1,4 +1,6 @@
-//Takes input from camera and puts on VGA touchscreen
+//Team: Code Busters
+//Authors: Chris Hoang, Jacob Rasmussen, Sach Vaidya, Nicholas Young
+//Purpose: Takes input from camera and puts on VGA touchscreen
 //Allows you to write on the touchscreen
 //Plays a sound if (the first time) you touch a specific area
 
@@ -6,6 +8,9 @@ start		cp cameraScale numThree			//Sets image size to 640x480
 color		cp colorWrite maize				//Sets the color to draw with
 Image		call copyX return				//Calls camera driver to get image to VGA memory
 touch		call touchscreen touchscreen_ra	//Calls touchscreen driver to get touch coordinates
+
+//_____________________________
+
 box			sub vgaXOne touch_x numTwo		//Sets the edges of the box to draw
 			add vgaXTwo touch_x numTwo		//Sets the edges of the box to draw
 			sub vgaYOne touch_y numTwo		//Sets the edges of the box to draw
@@ -14,6 +19,9 @@ box			sub vgaXOne touch_x numTwo		//Sets the edges of the box to draw
 			blt draw touch_x num310test		//Tests if the touched coordinate is in the target area
 			blt draw num250test touch_y		//Tests if the touched coordinate is in the target area
 			blt draw touch_y num230test		//Tests if the touched coordinate is in the target area
+
+//_____________________________
+
 			//be draw touched numOne		would only allow us to hit it once
 			//cp touched numOne				would basically set a bool to true
 speaker2	call speaker return				//calls the speaker
@@ -24,13 +32,26 @@ speaker2	call speaker return				//calls the speaker
 			add j j numOne					//adds 1 to the i counter
 			bne speaker2 j num100			//tests if it has run the sound a few times
 			cp j numZero					//Resets the j counter for next loop
+
+//_____________________________
+
 draw		cp vgaXwrite vgaXOne			//copies touchscreen X touched coordinate to left X VGA coordinate
 			cp vgaXtwoWrite vgaXTwo			//copies touchscreen X touched coordinate to right X VGA coordinate
 			cp vgaYwrite vgaYOne			//copies touchscreen Y touched coordinate to top Y VGA coordinate
 			cp vgaYtwoWrite vgaYTwo			//copies touchscreen Y touched coordinate to bottom Y VGA coordinate
 write		call vgaWrite return			//Calls the VGA write driver with the coordinates specified
+
+//_____________________________
+
 restart		be touch 0 0					//Loops back to call the touchscreen again
 end			halt							//Never actually gets here, but here is a halt statement just incase
+
+//_____________________________
+	
+	  ///////////////
+	 ///Variables///
+	///////////////
+//_____________________________
 
 numThree 	3
 return 		0

@@ -1,4 +1,6 @@
-//test compare
+//Team: Code Busters
+//Authors: Chris Hoang, Jacob Rasmussen, Sach Vaidya, Nicholas Young
+//Purpose: Tests the compare function by locating the pixel closest to the blue quarter of the screen
 
 start		cp colorWrite black
 			cp vgaXwrite numZeroTest
@@ -6,31 +8,45 @@ start		cp colorWrite black
 			cp vgaXtwoWrite num639
 			cp vgaYtwoWrite num479
 			call vgaWrite return
+
+//_____________________________
+
 Left		cp colorWrite blue
 			cp vgaXwrite numZeroTest
 			cp vgaYwrite numZeroTest
 			cp vgaXtwoWrite num319
 			cp vgaYtwoWrite num239
 			call vgaWrite return
+
+//_____________________________
+
 Right		cp colorWrite green
 			cp vgaXwrite num320
 			cp vgaYwrite num240
 			cp vgaXtwoWrite num639
 			cp vgaYtwoWrite num479
 			call vgaWrite return
+
+//_____________________________
+
 Bottom		cp colorWrite red
 			cp vgaXwrite numZeroTest
 			cp vgaYwrite num240
 			cp vgaXtwoWrite num319
 			cp vgaYtwoWrite num479
 			call vgaWrite return
+
+//_____________________________
+
 Top			cp colorWrite maize
 			cp vgaXwrite num320
 			cp vgaYwrite numZeroTest
 			cp vgaXtwoWrite num639
 			cp vgaYtwoWrite num239
 			call vgaWrite return
-			
+
+//_____________________________
+		
 			cp vgaYread num240
 			call VGAread returnVGA
 			cp colorWrite colorRead
@@ -39,20 +55,25 @@ Top			cp colorWrite maize
 			cp vgaXtwoWrite num330
 			cp vgaYtwoWrite num250
 			call vgaWrite return
+
+//_____________________________
 			
 			cp vgaXread numZeroTest
 			cp vgaYread numZeroTest
-			
+
 			cp comp_red numZeroTest
 			cp comp_green numZeroTest
 			cp comp_blue blue
+
+//_____________________________
 			
 			cp time1 0x80000005
 wait		sub diff 0x80000005 time1
 			blt wait diff thresh
+
+//_____________________________
 			
 			call compare return2
-			
 			cp colorWrite black
 			cp vgaXwrite min_x
 			cp vgaYwrite min_y
@@ -60,9 +81,15 @@ wait		sub diff 0x80000005 time1
 			add y2 min_y numTen
 			cp vgaXtwoWrite x2
 			cp vgaYtwoWrite y2
-			call vgaWrite return
-			
+			call vgaWrite return		
 			halt
+
+//_____________________________
+	
+	  ///////////////
+	 ///Variables///
+	///////////////
+//_____________________________
 
 black 		0
 blue		255

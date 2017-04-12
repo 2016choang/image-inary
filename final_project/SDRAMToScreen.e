@@ -1,6 +1,6 @@
 //Team: Code Busters
-//Group Members: Chris Hoang, Jacob Rasmussen, Sach Vaidya, Nicholas Young
-//Displays picture in SDRAM on VGA screen
+//Authors: Chris Hoang, Jacob Rasmussen, Sach Vaidya, Nicholas Young
+//Purpose: Displays picture in SDRAM on VGA screen
 
 RAMtoScreen	cp writeRAM zero
 loop2		cp addressRAM i
