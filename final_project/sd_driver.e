@@ -1,6 +1,6 @@
 //Team: Code Busters
-//Authors: Chris Hoang, Jacob Rasmussen, Sach Vaidya, Nicholas Young
-//Purpose Driver for SD card
+//Authors: Jacob Rasmussen, Sach Vaidya
+//Purpose: Driver for SD card
 
 //0x80000080	write 	bit 0: sd_command 	
 //0x80000081	read 	bit 0: sd_response

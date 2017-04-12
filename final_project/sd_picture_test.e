@@ -1,3 +1,7 @@
+//Team: Code Busters
+//Authors: Chris Hoang, Jacob Rasmussen, Sach Vaidya, Nicholas Young
+//Purpose: Tests displaying a picture on the SD card to the VGA display
+
 		cp writeRAM one
 //____________________________
 

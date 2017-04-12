@@ -1,3 +1,7 @@
+//Team: Code Busters
+//Authors: Chris Hoang, Jacob Rasmussen, Sach Vaidya, Nicholas Young
+//Purpose: Tests the average function
+
 test		cp end_address endave
 			//call SDCardToRAM return
 			call average return
@@ -15,9 +19,12 @@ test		cp end_address endave
 			
 			halt
 
-
-
-
+//_____________________________
+	
+	  ///////////////
+	 ///Variables///
+	///////////////
+//_____________________________
 
 endave 	6100
 one		1

@@ -1,3 +1,7 @@
+//Team: Code Busters
+//Authors: Jacob Rasmussen, Sach Vaidya
+//Purpose: Tests the driver for SDRAM
+
 		cp write one
 		cp data dat
 start	call sdram return
@@ -7,6 +11,13 @@ start	call sdram return
 		cp address i	
 		bne start address 0x1000
 		halt 
+
+//_____________________________
+	
+	  ///////////////
+	 ///Variables///
+	///////////////
+//_____________________________
 
 dat	0xbeef
 return 	0

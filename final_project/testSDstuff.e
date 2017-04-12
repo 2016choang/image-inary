@@ -1,8 +1,17 @@
-//test SDCtR
+//Team: Code Busters
+//Authors: Chris Hoang, Jacob Rasmussen, Sach Vaidya, Nicholas Young
+//Purpose: Tests transfering a picture from the SD card to SDRAM, then SDRAM to the VGA display
 
 	call SDCardToRAM returnSDCardToRam
 	call RAMtoScreen returnRAMtoScreen
 	halt
+
+//_____________________________
+	
+	  ///////////////
+	 ///Variables///
+	///////////////
+//_____________________________
 
 returnSDCardToRam		0
 returnRAMtoScreen		0

@@ -1,5 +1,5 @@
 //Team: Code Busters
-//Authors: Chris Hoang, Jacob Rasmussen, Sach Vaidya, Nicholas Young
+//Authors: Nicholas Young
 //Purpose: Driver for camera
 
 copyX		cp 0x800000b2 cameraX

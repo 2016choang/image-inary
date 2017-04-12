@@ -1,5 +1,5 @@
 //Team: Code Busters
-//Authors: Chris Hoang, Jacob Rasmussen, Sach Vaidya, Nicholas Young
+//Authors: Jacob Rasmussen, Sach Vaidya
 //Purpose: Driver for SDRAM
 
 //0x80000030	write 	bit 0: sdram_command 	SDRAM memory
