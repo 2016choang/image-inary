@@ -108,7 +108,7 @@ comp_red		0
 comp_green		0
 comp_blue		0
 
-//values from averag_chunk
+//values from average_chunk
 red_temp		0
 green_temp		0
 blue_temp		0
