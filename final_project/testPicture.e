@@ -14,15 +14,15 @@ testPicture cpfa colorWrite array i
 stop 		halt 
 			
 
-startX 100
-startY 100
-i 0
-col 133
-return 0
-one 1
-countEnd 660
-zero 0 
-num100 100
+startX 		100
+startY 		100
+i 			0	
+col 		133
+return 		0
+one 		1
+countEnd 	660
+zero 		0 
+num100 		100
 array 0xf8f8f8
 	0xf8f8f8
 	0xf8f8f0

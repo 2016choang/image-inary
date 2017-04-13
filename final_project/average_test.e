@@ -26,11 +26,11 @@ test		cp end_address endave
 	///////////////
 //_____________________________
 
-endave 	6100
-one		1
+endave 		6100
+one			1
 
-end_img	479
-return 	4
+end_img		479
+return 		4
 
 #include average.e
 #include VGAwrite.e

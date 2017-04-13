@@ -44,19 +44,19 @@ stop	halt
 	///////////////
 //_____________________________
 
-one		1
-zero	0
+one				1
+zero			0
 
-i		0
-return	0
-return2	0
+i				0
+return			0
+return2			0
 returnVGAwrite	0
 
-end		16950
-X		100
-Y		100
-col		250
-start	100
+end			16950
+X			100
+Y			100
+col			250
+start		100
 
 //______________________________
 

@@ -19,8 +19,8 @@ start	call sdram return
 	///////////////
 //_____________________________
 
-dat	0xbeef
+dat		0xbeef
 return 	0
-i	0
+i		0
 
 #include sdram_driver.e

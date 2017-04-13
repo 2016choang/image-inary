@@ -1,9 +1,9 @@
 //Team: Code Busters
 //Authors: Chris Hoang, Jacob Rasmussen, Sach Vaidya, Nicholas Young
 //Purpose: Find average pixel color of smaller image to be hidden 
-
 //Update start and end address before calling 
-//ave_pixel updated to the average pixel value at the end 
+//ave_pixel updated to the average pixel value at the end
+ 
 average 	cp writeRAM zero
 			cp ave_pixel zero
 			cp addressRAM start_address
@@ -80,29 +80,29 @@ inc			add current_address current_address one
 	///////////////
 //_____________________________
 
-//red_and 	16711680 //0b111111110000000000000000 
-//green_and	65280 //0b000000001111111100000000
-//blue_and	255 //000000000000000011111111b 
-//blue_temp	0
+//red_and 		16711680 //0b111111110000000000000000 
+//green_and		65280 //0b000000001111111100000000
+//blue_and		255 //000000000000000011111111b 
+//blue_temp		0
 //green_temp	0
-//red_temp	0
+//red_temp		0
 
-blue_tot	0
-green_tot	0
-red_tot		0
-count		0
+blue_tot		0
+green_tot		0
+red_tot			0
+count			0
 
-//sixteen 	16
+//sixteen 		16
 //eight 		8
 start_address	0
-end_address 400
+end_address 	400
 current_address 0
-ave_pixel	0
-red_ave		0
-blue_ave	0
-green_ave	0
+ave_pixel		0
+red_ave			0
+blue_ave		0
+green_ave		0
 
-//zero		0
-two			2
-three		3
-four 		4
+//zero			0
+two				2
+three			3
+four 			4
