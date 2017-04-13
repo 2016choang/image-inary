@@ -30,14 +30,7 @@ looper		call sdram returnram
 			
 			//Bitshift red and green so there are no trailing 0s
 			sr red_temp red_temp sixteen
-			sr green_temp green_temp eight
-			//blt break red_temp upper
-			//blt break green_temp upper
-			//blt break blue_temp upper	
-			//blt break lower red_temp
-			//blt break lower green_temp
-			//blt break lower blue_temp
-			//be inc one one		
+			sr green_temp green_temp eight		
 
 //____________________________
 
@@ -102,7 +95,7 @@ count		0
 //sixteen 	16
 //eight 		8
 start_address	0
-end_address 16950
+end_address 400
 current_address 0
 ave_pixel	0
 red_ave		0
@@ -113,5 +106,3 @@ green_ave	0
 two			2
 three		3
 four 		4
-upper		225
-lower		30

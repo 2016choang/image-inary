@@ -1,10 +1,9 @@
 //Team: Code Busters
-//Authors: Chris Hoang, Jacob Rasmussen, Sach Vaidya, Nicholas Young
-//Purpose: Master file for Image-inary prototype
+//Group Members: Chris Hoang, Jacob Rasmussen, Sach Vaidya, Nicholas Young
+//Master file for Image-inary prototype
 
 master	cp writeRAM one
 		cp cameraScale numThree			//Sets image size to 640x480
-		call copyX returnCAM			//Calls camera driver to get image to VGA memory
 //____________________________
 
 loop1	cp addressSD i
@@ -15,12 +14,15 @@ loop1	cp addressSD i
 		add i i one
 		blt loop1 i end
 //_____________________________
+startMaster		call copyX returnCAM			//Calls camera driver to get image to VGA memory
 
 		cp time1 0x80000005
 wait	sub diff 0x80000005 time1
 		blt wait diff thresh
 		
 		call average returnavg
+		sr red_ave red_ave sixteen
+		sr green_ave green_ave eight
 		cp comp_red red_ave
 		cp comp_green green_ave
 		cp comp_blue blue_ave
@@ -34,7 +36,7 @@ wait	sub diff 0x80000005 time1
 		cp X min_x
 		cp Y min_y
 		cp start min_x
-		add col X num150
+		add col X num20
 		cp 0x80000001 min_x
 		cp 0x80000003 min_y
 		
@@ -56,7 +58,7 @@ loop2	cp addressRAM i
 		cp vgaYtwoWrite Y
 
 		//cp 0x80000004 numFour
-		//call vgaWrite returnVGAwrite
+		call vgaWrite returnVGAwrite
 		add i i one
 		be loop3 i end
 		add X X one
@@ -68,8 +70,8 @@ loop2	cp addressRAM i
 loop3	call touchscreen touchscreen_ra	//Calls touchscreen driver to get touch coordinates
 		cp colorWrite ave_pixel
 		cp 0x80000002 one
-		sub leftX X num150		//Sets the edges of the box to draw
-		sub bottomY Y num113		//Sets the edges of the box to draw
+		sub leftX X num20		//Sets the edges of the box to draw
+		sub bottomY Y num20		//Sets the edges of the box to draw
 		blt loop3 X touch_x		//Tests if the touched coordinate is in the target area
 		blt loop3 touch_x leftX		//Tests if the touched coordinate is in the target area
 		blt loop3 Y touch_y		//Tests if the touched coordinate is in the target area
@@ -86,8 +88,24 @@ speaker2	call speaker returnSpeaker				//calls the speaker
 		add j j one					//adds 1 to the i counter
 		bne speaker2 j num100			//tests if it has run the sound a few times
 		cp j zero					//Resets the j counter for next loop
-		//reset button
+		be resetMaster 0x80000000 one
 		be loop3 zero zero
+		
+resetMaster		cp chunkX zero
+		cp chunkY zero
+		cp min_diff numMax
+		cp red_tot zero
+		cp green_tot zero
+		cp blue_tot zero
+		cp count zero
+		cp start_address zero
+		cp ave_pixel zero
+		cp red_ave zero
+		cp green_ave zero
+		cp blue_ave zero
+		cp i zero
+		be master zero zero
+		
 		
 		
 //_____________________________
@@ -114,6 +132,10 @@ num100		100
 thresh 		56000
 diff		0
 time1		0
+num80		80
+num60		60
+num20		20
+numMax		9999999
 
 i				0
 return			0
@@ -133,7 +155,7 @@ j				0
 leftX			0
 bottomY			0
 
-end		16950
+end		400
 X		0
 Y		0
 col		0

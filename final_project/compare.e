@@ -1,8 +1,6 @@
 //Team: Code Busters
-//Authors: Chris Hoang, Jacob Rasmussen, Sach Vaidya, Nicholas Young
-//Purpose: Find location of pixel that is closest in color to the average pixel color
-
-
+//Group Members: Chris Hoang, Jacob Rasmussen, Sach Vaidya, Nicholas Young
+//Find location of pixel that is closest in color to the average pixel color
 //Update comp_red, comp_green and comp_blue before calling
 //Returns location of pixel with min difference in min_x and min_y
 
@@ -23,8 +21,7 @@ compare			cp startX chunkX
 				add vgaYtwoWrite chunkY num10
 				cp colorWrite ave_pixel_chunk
 				call vgaWrite returnVGAwrite			
-
-//_____________________________			
+			
 				
 				//Bitshift red and green so there are no trailing 0s
 				sr red_temp red_temp sixteen
@@ -35,19 +32,14 @@ compare			cp startX chunkX
 				sub green_diff green_temp comp_green
 				sub blue_diff blue_temp comp_blue
 
-//_____________________________
-
 				//Check if any differences are less than 0
 checkRed		blt abs_red red_diff zero
 checkGreen		blt abs_green green_diff zero
 checkBlue		blt abs_blue blue_diff zero
 
-//_____________________________
-
 start_add		add tot_diff tot_diff red_diff
 				add tot_diff tot_diff green_diff
 				add tot_diff tot_diff blue_diff
-				
 
 				//Update min_diff accordingly
 				blt end_loop min_diff tot_diff
@@ -56,8 +48,6 @@ start_add		add tot_diff tot_diff red_diff
 				cp min_y chunkY
 				be end_loop zero zero
 
-//_____________________________
-
 				//Calculate absolute value of differences
 abs_red			mult red_diff red_diff neg_one
 				be checkGreen zero zero
@@ -65,8 +55,6 @@ abs_green		mult green_diff green_diff neg_one
 				be checkBlue zero zero
 abs_blue		mult blue_diff blue_diff neg_one
 				be start_add zero zero
-
-//_____________________________
 
 				//Prepare for next iteration of compare
 end_loop		cp red_diff zero
@@ -80,16 +68,16 @@ end_loop		cp red_diff zero
 				blt incrementY chunkY height
 				ret returncomp
 
-//_____________________________
 
-incrementX 		add chunkX chunkX num160
+incrementX 		add chunkX chunkX num80
 				be compare zero zero
+
 				
 incrementY		cp chunkX zero
-				add chunkY chunkY num120
+				add chunkY chunkY num60
 				be compare zero zero
  			
-//_____________________________
+ //_____________________________
 	
 	  ///////////////
 	 ///Variables///
@@ -108,7 +96,7 @@ comp_red		0
 comp_green		0
 comp_blue		0
 
-//values from average_chunk
+//values from averag_chunk
 red_temp		0
 green_temp		0
 blue_temp		0
@@ -126,8 +114,8 @@ min_y			0
 
 chunkX			0
 chunkY			0
-width			480
-height			360
+width			620
+height			460
 
 countone		1
 one				1
