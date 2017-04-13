@@ -26,13 +26,14 @@ wait		sub diff 0x80000005 time1
 			cp comp_red red_ave
 			cp comp_green green_ave
 			cp comp_blue blue_ave
+			be skip_master 0x80000000 three
 			cp colorWrite ave_pixel
 			cp vgaXwrite num100
 			cp vgaYwrite num100
 			add vgaYtwoWrite num100 num10
 			add vgaXtwoWrite num100 num10
 			call vgaWrite returnVGAwrite 
-			call compare returncomp
+skip_master	call compare returncomp
 			cp X min_x
 			cp Y min_y
 			cp start min_x
@@ -90,6 +91,7 @@ speaker2	call speaker returnSpeaker				//calls the speaker
 			bne speaker2 j num100			//tests if it has run the sound a few times
 			cp j zero					//Resets the j counter for next loop
 			be resetMaster 0x80000000 one
+			be resetMaster 0x80000000 three
 			be loop3 zero zero
 		
 resetMaster	cp chunkX zero

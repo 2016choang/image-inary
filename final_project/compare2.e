@@ -15,17 +15,16 @@ compare			cp startX chunkX
 				and green_temp green_and ave_pixel_chunk
 				and blue_temp blue_and ave_pixel_chunk
 				
-				be skip 0x80000000 three
-				cp vgaXwrite chunkX
-				cp vgaYwrite chunkY
-				add vgaXtwoWrite chunkX num10
-				add vgaYtwoWrite chunkY num10
-				cp colorWrite ave_pixel_chunk
-				call vgaWrite returnVGAwrite			
+				//cp vgaXwrite chunkX
+				//cp vgaYwrite chunkY
+				//add vgaXtwoWrite chunkX num10
+				//add vgaYtwoWrite chunkY num10
+				//cp colorWrite ave_pixel_chunk
+				//call vgaWrite returnVGAwrite			
 			
 				
 				//Bitshift red and green so there are no trailing 0s
-skip			sr red_temp red_temp sixteen
+				sr red_temp red_temp sixteen
 				sr green_temp green_temp eight
 
 				//Calculate differences in pixel values 
@@ -67,7 +66,7 @@ end_loop		cp red_diff zero
 				cp blue_temp zero
 				blt incrementX chunkX width
 				blt incrementY chunkY height
-				ret returncomp
+				ret returncomp2
 
 
 incrementX 		add chunkX chunkX num80
